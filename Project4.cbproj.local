@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2025.06.23 09:25:47.375,=D:\Навчання\C++ builder\Project4PCH1.h</Transaction>
-    <Transaction>2025.06.23 09:25:47.729,=D:\Навчання\C++ builder\Unit2.cpp</Transaction>
-    <Transaction>2025.06.23 09:26:06.467,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4PCH1.h=D:\Навчання\C++ builder\Project4PCH1.h</Transaction>
-    <Transaction>2025.06.23 09:26:06.484,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit2.dfm=D:\Навчання\C++ builder\Unit2.dfm</Transaction>
-    <Transaction>2025.06.23 09:26:06.484,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit2.cpp=D:\Навчання\C++ builder\Unit2.cpp</Transaction>
-    <Transaction>2025.06.23 09:26:06.484,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit2.h=D:\Навчання\C++ builder\Unit2.h</Transaction>
-    <Transaction>2025.06.23 09:26:06.501,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4.cbproj=D:\Навчання\C++ builder\Project4.cbproj</Transaction>
-    <Transaction>2025.06.23 09:26:11.537,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4.cbproj=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4.cbproj</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.467,D:\Навчання\C++ builder\Project4PCH1.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.484,D:\Навчання\C++ builder\Unit2.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit2.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.729,=D:\Навчання\C++ builder\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.484,D:\Навчання\C++ builder\Unit2.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.484,D:\Навчання\C++ builder\Unit2.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.501,D:\Навчання\C++ builder\Project4.cbproj=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.537,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4.cbproj=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Project4.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.375,=D:\Навчання\C++ builder\Project4PCH1.h</Transaction>
+    <Transaction>2025.06.23 17:12:27.175,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit1.cpp</Transaction>
+    <Transaction>2025.06.23 17:34:02.458,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Unit3.cpp</Transaction>
   </Transactions>
 </BorlandProject>
