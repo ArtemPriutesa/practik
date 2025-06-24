@@ -19,33 +19,22 @@ __fastcall TFormОffice::TFormОffice(TComponent* Owner)
 
 void __fastcall TFormОffice::Button1Click(TObject *Sender)
 {
-if (FormAuthorization->AuthenticatedUserID != -1)
-	{
-		// Створюємо екземпляр форми "Мої договори"
-		TFormMyPolicies *MyPoliciesForm = new TFormMyPolicies(this);
-		try
+if (FormAuthorization->AuthenticatedUserID != -1) // Перевіряємо, чи користувач авторизований
+    {
+        TFormMyPolicies *MyPoliciesForm = new TFormMyPolicies(this);
+        try
         {
-            // Передаємо КодКористувача до форми "Мої договори"
-			MyPoliciesForm->SetUserID(FormAuthorization->AuthenticatedUserID);
-
-			// Показуємо форму "Мої договори" модально
-            // Це означає, що користувач не зможе взаємодіяти з "Особистим кабінетом",
-            // доки не закриє форму "Мої договори".
-            MyPoliciesForm->ShowModal();
-
-            // Після закриття MyPoliciesForm (за потреби):
-            // if (MyPoliciesForm->ModalResult == mrOk) { ... }
-        }
+			MyPoliciesForm->SetUserID(FormAuthorization->AuthenticatedUserID); // Передаємо ID користувача
+            MyPoliciesForm->ShowModal(); // Показуємо форму модально
+		}
         __finally
         {
-            delete MyPoliciesForm; // Завжди звільняємо пам'ять, якщо створювали з 'new'
+            delete MyPoliciesForm; // Завжди видаляємо об'єкт форми після використання
         }
-    }
+	}
     else
     {
         ShowMessage("Для перегляду договорів необхідно авторизуватися.");
-        // Можливо, показати форму авторизації знову:
-        // Form2->ShowModal();
 	}
 }
 //---------------------------------------------------------------------------

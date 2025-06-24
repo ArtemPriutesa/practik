@@ -1,0 +1,118 @@
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit4.h"
+#include "Unit2.h" // Якщо TForm2 - ваша форма авторизації, можливо, знадобиться для доступу до ID
+#include "Unit3.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFormMyPolicies *FormMyPolicies;
+//---------------------------------------------------------------------------
+__fastcall TFormMyPolicies::TFormMyPolicies(TComponent* Owner)
+	: TForm(Owner)
+{
+    FUserID = -1; // Ініціалізуємо ID
+}
+//---------------------------------------------------------------------------
+
+void TFormMyPolicies::SetUserID(int UserID)
+{
+    FUserID = UserID;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMyPolicies::FormCreate(TObject *Sender)
+{
+	 try
+	{
+		// 1. Підключаємося до бази даних
+		ADOQueryMyPolicies->Active=true;
+		ADOConnectionMyPolicies->Connected = true;
+
+
+		if (FUserID != -1) {
+
+			ADOQueryMyPolicies->Parameters->ParamByName("UserID")->Value = FUserID;
+
+			// 6. Відкриваємо запит для завантаження даних
+			ADOQueryMyPolicies->Open(); // Якщо тут виникає помилка, дані не завантажаться
+
+			// Після ADOQueryMyPolicies->Open(), TDBGrid автоматично відобразить дані,
+			// оскільки він пов'язаний через DataSourceMyPolicies.
+		} else {
+			ShowMessage("Помилка: Код користувача не був переданий для відображення договорів.");
+			// Можливо, закрити форму або приховати DBGrid
+			ModalResult = mrCancel; // Закрити форму, якщо немає ID користувача
+		}
+	}
+	catch (Exception &E)
+	{
+		// Обробка помилок підключення або SQL-запиту
+		ShowMessage("Помилка при завантаженні моїх договорів: " + E.Message);
+		// Додатково можна вивести SQL-запит для налагодження:
+		// ShowMessage("SQL: " + ADOQueryMyPolicies->SQL->Text);
+		// Якщо виникає помилка, закрити запит
+		if (ADOQueryMyPolicies->Active) {
+			ADOQueryMyPolicies->Close();
+		}
+		ModalResult = mrAbort; // Вказати, що форма закривається через помилку
+	}
+	/*
+	try
+	{
+		// 1. Підключаємося до бази даних
+		ADOConnectionMyPolicies->Connected = true;
+
+		// 2. Перевіряємо, чи був встановлений ID користувача
+		if (FUserID != -1) {
+			// 3. Закриваємо таблицю, якщо вона була відкрита (на випадок повторного відкриття)
+			if (ADOTableMyPolicies->Active) {
+				ADOTableMyPolicies->Close();
+			}
+
+			// 4. Встановлюємо ім'я таблиці, з якою працюємо
+			ADOTableMyPolicies->TableName = "[Policy]"; // Обов'язково з квадратними дужками
+
+			// 5. Встановлюємо фільтр для відображення договорів лише для поточного користувача
+			// Важливо: Значення фільтра повинно бути у вигляді рядка.
+			// Для числових полів просто конвертуємо число в рядок.
+			// Для текстових полів - обгортаємо значення в одинарні лапки: 'текст'.
+			ADOTableMyPolicies->Filter = "КодКористувача = " + IntToStr(FUserID);
+			ADOTableMyPolicies->Filtered = true; // Активуємо фільтр
+
+			// 6. Відкриваємо таблицю для завантаження даних
+			ADOTableMyPolicies->Open();
+
+			// Після ADOTableMyPolicies->Open(), TDBGrid автоматично відобразить відфільтровані дані,
+			// оскільки він пов'язаний через DataSourceMyPolicies.
+		} else {
+			ShowMessage("Помилка: Код користувача не був переданий для відображення договорів.");
+			ModalResult = mrCancel; // Закрити форму, якщо немає ID користувача
+		}
+	}
+	catch (Exception &E)
+	{
+		// Обробка помилок підключення або відкриття таблиці
+		ShowMessage("Помилка при завантаженні моїх договорів: " + E.Message);
+		if (ADOTableMyPolicies->Active) {
+			ADOTableMyPolicies->Close();
+		}
+		ModalResult = mrAbort;
+	}
+		 */
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMyPolicies::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	// Важливо: закривайте запити та з'єднання при закритті форми
+    if (ADOQueryMyPolicies->Active) {
+        ADOQueryMyPolicies->Close();
+    }
+    if (ADOConnectionMyPolicies->Connected) {
+		ADOConnectionMyPolicies->Close();
+	}
+}
+//---------------------------------------------------------------------------

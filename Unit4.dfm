@@ -12,10 +12,11 @@ object FormMyPolicies: TFormMyPolicies
   Font.Style = []
   TextHeight = 15
   object DBGridMyPolicies: TDBGrid
-    Left = 88
-    Top = 72
-    Width = 473
-    Height = 177
+    Left = 0
+    Top = 0
+    Width = 624
+    Height = 441
+    Align = alClient
     DataSource = DataSourceMyPolicies
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
@@ -23,58 +24,44 @@ object FormMyPolicies: TFormMyPolicies
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        Visible = True
-      end
-      item
-        Expanded = False
-        Visible = True
-      end
-      item
-        Expanded = False
-        Visible = True
-      end
-      item
-        Expanded = False
-        Width = 63
-        Visible = True
-      end
-      item
-        Expanded = False
-        Visible = True
-      end
-      item
-        Expanded = False
-        Visible = True
-      end
-      item
-        Expanded = False
-        Visible = True
-      end>
   end
   object ADOConnectionMyPolicies: TADOConnection
+    Connected = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ARTEM\OneD' +
       'rive\Desktop\repoz\practik\practik_data_baze_format2003.mdb;Pers' +
-      'ist Security Info=False'
+      'ist Security Info=False;'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
-    Left = 488
+    Left = 568
     Top = 376
   end
   object ADOQueryMyPolicies: TADOQuery
+    Active = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ARTEM\OneD' +
       'rive\Desktop\repoz\practik\practik_data_baze_format2003.mdb;Pers' +
       'ist Security Info=False'
-    Parameters = <>
-    Left = 536
+    CursorType = ctStatic
+    Parameters = <
+      item
+        Name = 'UserID'
+        Attributes = [paNullable]
+        DataType = ftWideString
+        NumericScale = 255
+        Precision = 255
+        Size = 510
+        Value = Null
+      end>
+    SQL.Strings = (
+      'SELECT * FROM [Policy] WHERE '#1050#1086#1076#1050#1086#1088#1080#1089#1090#1091#1074#1072#1095#1072' = :UserID')
+    Left = 520
     Top = 376
   end
   object DataSourceMyPolicies: TDataSource
     DataSet = ADOQueryMyPolicies
-    Left = 432
+    Left = 472
     Top = 376
   end
 end

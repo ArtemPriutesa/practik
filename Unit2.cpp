@@ -73,11 +73,10 @@ void __fastcall TFormAuthorization::Button1Click(TObject *Sender)
 
 			AnsiString loggedInUsername = ADOQuery1->Fields->FieldByName("Логін")->AsString;
             ShowMessage("Ласкаво просимо, " + loggedInUsername + "!");
-            AuthenticatedUserID = ADOQuery1->Fields->FieldByName("КодКористувача")->AsInteger;
+			AuthenticatedUserID = ADOQuery1->Fields->FieldByName("КодКористувача")->AsInteger;
 			AuthenticatedUsername = loggedInUsername;
 			FormОffice->Show();
 			Hide();
-
 		} else {
             ShowMessage("Невірний логін або пароль.");
         }

@@ -1,0 +1,62 @@
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit4.h"
+#include "Unit2.h" // Якщо TForm2 - ваша форма авторизації, можливо, знадобиться для доступу до ID
+
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFormMyPolicies *FormMyPolicies;
+//---------------------------------------------------------------------------
+__fastcall TFormMyPolicies::TFormMyPolicies(TComponent* Owner)
+	: TForm(Owner)
+{
+    FUserID = -1; // Ініціалізуємо ID
+}
+//---------------------------------------------------------------------------
+
+void TFormMyPolicies::SetUserID(int UserID)
+{
+    FUserID = UserID;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMyPolicies::FormCreate(TObject *Sender)
+{
+	try
+    {
+        ADOConnectionMyPolicies->Connected = true;
+
+        // Перевіряємо, чи був встановлений UserID
+        if (FUserID != -1) {
+            ADOQueryMyPolicies->SQL->Clear();
+            // Зверніть увагу: [Policy] і КодКористувача з вашої БД
+            // Обираємо всі поля для відображення
+            ADOQueryMyPolicies->SQL->Add("SELECT * FROM [Policy] WHERE КодКористувача = :UserID");
+
+			ADOQueryMyPolicies->Parameters->ParamByName("UserID")->Value = FUserID;
+
+            ADOQueryMyPolicies->Open(); // Відкриваємо запит
+        } else {
+			ShowMessage("Помилка: Код користувача не був переданий для відображення договорів.");
+        }
+    }
+    catch (Exception &E)
+    {
+        ShowMessage("Помилка при завантаженні моїх договорів: " + E.Message);
+		// Можливо, закрити форму або приховати DBGrid
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormMyPolicies::FormClose(TObject *Sender, TCloseAction &Action)
+{
+    if (ADOQueryMyPolicies->Active) {
+		ADOQueryMyPolicies->Close();
+    }
+    if (ADOConnectionMyPolicies->Connected) {
+        ADOConnectionMyPolicies->Close();
+    }
+}
+//---------------------------------------------------------------------------

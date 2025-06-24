@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{DDF21D92-D173-415F-B5EC-50C5423755CB}</ProjectGuid>
+        <ProjectGuid>{E9467633-2606-4789-A72A-851F90B14B35}</ProjectGuid>
         <ProjectVersion>20.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <AppType>Application</AppType>
@@ -54,14 +54,14 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
         <ProjectType>CppVCLApplication</ProjectType>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <AllPackageLibs>rtl.lib;vcl.lib;dbrtl.lib;adortl.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;dbrtl.lib;adortl.lib;vcldb.lib;vclwinx.lib;vclimg.lib;bindengine.lib</AllPackageLibs>
         <_TCHARMapping>wchar_t</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <UWP_CppLogo44>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_44.png</UWP_CppLogo44>
         <UWP_CppLogo150>$(BDS)\bin\Artwork\Windows\UWP\cppreg_UwpDefault_150.png</UWP_CppLogo150>
-        <IncludePath>C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\;$(IncludePath)</IncludePath>
-        <ILINK_LibraryPath>C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>..\Нова папка\;..\;prog\;C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\Нова папка\;..\;prog\;C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <SanitizedProjectName>Project4</SanitizedProjectName>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
@@ -73,7 +73,7 @@
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <BCC_PCHName_Clang>Project4PCH1.h</BCC_PCHName_Clang>
+        <BCC_PCHName_Clang>..\Project4PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1)'!=''">
         <BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
@@ -99,7 +99,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;adortl.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi</LinkPackageImports>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
     </PropertyGroup>
@@ -115,31 +115,45 @@
         <CppCompile Include="Project4.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
-        <PCHCompile Include="Project4PCH1.h">
+        <PCHCompile Include="..\Project4PCH1.h">
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
-        <CppCompile Include="Unit1.cpp">
+        <CppCompile Include="..\Unit1.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
-            <DependentOn>Unit1.h</DependentOn>
+            <DependentOn>..\Unit1.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Unit2.cpp">
-            <Form>Form2</Form>
+        <CppCompile Include="..\Unit2.cpp">
+            <Form>FormAuthorization</Form>
             <FormType>dfm</FormType>
-            <DependentOn>Unit2.h</DependentOn>
+            <DependentOn>..\Unit2.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Unit3.cpp">
-            <Form>Form3</Form>
+        <CppCompile Include="..\Unit3.cpp">
+            <Form>FormОffice</Form>
             <FormType>dfm</FormType>
-            <DependentOn>Unit3.h</DependentOn>
+            <DependentOn>..\Unit3.h</DependentOn>
             <BuildOrder>4</BuildOrder>
         </CppCompile>
-        <FormResources Include="Unit2.dfm"/>
-        <FormResources Include="Unit1.dfm"/>
-        <FormResources Include="Unit3.dfm"/>
+        <CppCompile Include="..\Unit4.cpp">
+            <Form>FormMyPolicies</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>..\Unit4.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="..\Unit5.cpp">
+            <Form>TFormCreatePolicy</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>..\Unit5.h</DependentOn>
+            <BuildOrder>6</BuildOrder>
+        </CppCompile>
+        <FormResources Include="..\Unit4.dfm"/>
+        <FormResources Include="..\Unit5.dfm"/>
+        <FormResources Include="..\Unit3.dfm"/>
+        <FormResources Include="..\Unit1.dfm"/>
+        <FormResources Include="..\Unit2.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

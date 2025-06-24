@@ -16,15 +16,15 @@ class TFormMyPolicies : public TForm
 __published:	// IDE-managed Components
     TADOConnection *ADOConnectionMyPolicies;
     TADOQuery *ADOQueryMyPolicies;
-    TDataSource *DataSourceMyPolicies;
-    TDBGrid *DBGridMyPolicies; // Можливо, для заголовка "Мої договори"
+    TDBGrid *DBGridMyPolicies;
+	TDataSource *DataSourceMyPolicies; // Можливо, для заголовка "Мої договори"
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
     int FUserID; // Для зберігання ID користувача, який буде переданий
 public:		// User declarations
     __fastcall TFormMyPolicies(TComponent* Owner);
-    // Метод для встановлення ID користувача
+	// Метод для встановлення ID користувача
     void SetUserID(int UserID);
 };
 //---------------------------------------------------------------------------

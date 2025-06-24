@@ -4,11 +4,11 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
-USEFORM("..\Unit3.cpp", FormÎffice);
 USEFORM("..\Unit4.cpp", FormMyPolicies);
+USEFORM("..\Unit5.cpp", FormCreatePolicy);
+USEFORM("..\Unit3.cpp", FormÎffice);
 USEFORM("..\Unit1.cpp", Form1);
 USEFORM("..\Unit2.cpp", FormAuthorization);
-USEFORM("..\Unit5.cpp", TFormCreatePolicy);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -20,7 +20,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TForm1), &Form1);
 		Application->CreateForm(__classid(TFormÎffice), &FormÎffice);
 		Application->CreateForm(__classid(TFormMyPolicies), &FormMyPolicies);
-		Application->CreateForm(__classid(TTFormCreatePolicy), &TFormCreatePolicy);
+		Application->CreateForm(__classid(TFormCreatePolicy), &FormCreatePolicy);
 		Application->Run();
 	}
 	catch (Exception &exception)

@@ -1,4 +1,4 @@
-object TFormCreatePolicy: TTFormCreatePolicy
+object FormCreatePolicy: TFormCreatePolicy
   Left = 0
   Top = 0
   Caption = #1053#1086#1074#1080#1081' '#1076#1086#1075#1086#1074#1110#1088
@@ -10,39 +10,167 @@ object TFormCreatePolicy: TTFormCreatePolicy
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
     Left = 208
-    Top = 40
-    Width = 140
-    Height = 28
+    Top = 32
+    Width = 201
+    Height = 37
     Caption = #1053#1086#1074#1080#1081' '#1076#1086#1075#1086#1074#1110#1088
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = '@Malgun Gothic'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 69
+    Top = 96
+    Width = 191
+    Height = 23
+    Caption = #1042#1074#1077#1076#1110#1090#1100' '#1090#1080#1087' '#1089#1090#1088#1072#1093#1091#1074#1072#1085#1085#1103
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 69
+    Top = 155
+    Width = 165
+    Height = 23
+    Caption = #1042#1082#1072#1078#1110#1090#1100' '#1076#1072#1090#1091' '#1087#1086#1095#1072#1090#1082#1091
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    OnClick = Label3Click
+  end
+  object Label4: TLabel
+    Left = 88
+    Top = 232
+    Width = 3
+    Height = 15
+  end
+  object Label6: TLabel
+    Left = 69
+    Top = 219
+    Width = 264
+    Height = 23
+    Caption = #1042#1074#1077#1076#1110#1090#1100' '#1090#1077#1088#1084#1110#1085' '#1089#1090#1088#1072#1093#1091#1074#1072#1085#1085#1103'('#1088#1086#1082#1080')'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 69
+    Top = 283
+    Width = 219
+    Height = 23
+    Caption = #1041#1072#1079#1086#1074#1072' '#1089#1090#1072#1074#1082#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072' '#1088#1110#1082
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object DTPStartDate: TDateTimePicker
+    Left = 384
+    Top = 155
+    Width = 145
+    Height = 23
+    Date = 45832.000000000000000000
+    Time = 0.740372893516905600
+    TabOrder = 0
+  end
+  object EditTermYears: TEdit
+    Left = 384
+    Top = 222
+    Width = 33
+    Height = 23
+    TabOrder = 1
+  end
+  object DTPEndDate: TDateTimePicker
+    Left = 439
+    Top = 222
+    Width = 90
+    Height = 23
+    Date = 45832.000000000000000000
+    Time = 0.740372893516905600
+    TabOrder = 2
+  end
+  object EditBaseRate: TEdit
+    Left = 384
+    Top = 286
+    Width = 145
+    Height = 23
+    Enabled = False
+    TabOrder = 3
+  end
+  object ButtonCreate: TButton
+    Left = 208
+    Top = 360
+    Width = 201
+    Height = 33
+    Caption = #1057#1090#1074#1086#1088#1080#1090#1080
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
     Font.Height = -20
     Font.Name = 'Segoe UI Semibold'
     Font.Style = [fsBold]
     ParentFont = False
+    TabOrder = 4
+    OnClick = ButtonCreateClick
   end
-  object Label2: TLabel
-    Left = 88
-    Top = 128
-    Width = 34
-    Height = 15
-    Caption = 'Label2'
+  object Button2: TButton
+    Left = 69
+    Top = 45
+    Width = 108
+    Height = 23
+    Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1100
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = '@Malgun Gothic'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+    OnClick = Button2Click
   end
-  object Label3: TLabel
-    Left = 88
-    Top = 179
-    Width = 34
-    Height = 15
-    Caption = 'Label2'
+  object ComboBoxType: TComboBox
+    Left = 384
+    Top = 99
+    Width = 145
+    Height = 23
+    TabOrder = 6
+    Items.Strings = (
+      #1040#1074#1090#1086#1089#1090#1072#1093#1091#1074#1072#1085#1085#1103' '
+      #1057#1090#1088#1072#1093#1091#1074#1072#1085#1085#1103' '#1078#1080#1090#1090#1103)
   end
-  object Label4: TLabel
-    Left = 88
-    Top = 248
-    Width = 34
-    Height = 15
-    Caption = 'Label2'
+  object ADOQueryCreatePolicy: TADOQuery
+    Connection = ADOConnectionCreatePolicy
+    Parameters = <>
+    Left = 512
+    Top = 376
+  end
+  object ADOConnectionCreatePolicy: TADOConnection
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ARTEM\OneD' +
+      'rive\Desktop\repoz\practik\practik_data_baze_format2003.mdb;Pers' +
+      'ist Security Info=False'
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 568
+    Top = 376
   end
 end
