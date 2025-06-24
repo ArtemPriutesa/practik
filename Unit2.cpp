@@ -55,8 +55,8 @@ void __fastcall TFormAuthorization::Button1Click(TObject *Sender)
 
     try
     {
-		// Закриваємо запит, якщо він був відкритий
-        if (ADOQuery1->Active) { // Використовуємо ваш ADOQuery1
+
+        if (ADOQuery1->Active) {
             ADOQuery1->Close();
 		}
 

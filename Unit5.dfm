@@ -41,7 +41,7 @@ object FormCreatePolicy: TFormCreatePolicy
   end
   object Label3: TLabel
     Left = 69
-    Top = 155
+    Top = 147
     Width = 165
     Height = 23
     Caption = #1042#1082#1072#1078#1110#1090#1100' '#1076#1072#1090#1091' '#1087#1086#1095#1072#1090#1082#1091
@@ -51,7 +51,6 @@ object FormCreatePolicy: TFormCreatePolicy
     Font.Name = 'Segoe UI'
     Font.Style = []
     ParentFont = False
-    OnClick = Label3Click
   end
   object Label4: TLabel
     Left = 88
@@ -61,7 +60,7 @@ object FormCreatePolicy: TFormCreatePolicy
   end
   object Label6: TLabel
     Left = 69
-    Top = 219
+    Top = 203
     Width = 264
     Height = 23
     Caption = #1042#1074#1077#1076#1110#1090#1100' '#1090#1077#1088#1084#1110#1085' '#1089#1090#1088#1072#1093#1091#1074#1072#1085#1085#1103'('#1088#1086#1082#1080')'
@@ -74,10 +73,23 @@ object FormCreatePolicy: TFormCreatePolicy
   end
   object Label5: TLabel
     Left = 69
-    Top = 283
-    Width = 219
+    Top = 253
+    Width = 271
     Height = 23
-    Caption = #1041#1072#1079#1086#1074#1072' '#1089#1090#1072#1074#1082#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072' '#1088#1110#1082
+    Caption = #1055#1086#1074#1085#1072' '#1089#1091#1084#1072' '#1086#1087#1083#1072#1090#1080' '#1079#1072' '#1074#1077#1089#1100' '#1090#1077#1088#1084#1110#1085
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 69
+    Top = 301
+    Width = 207
+    Height = 23
+    Caption = #1044#1072#1090#1072' '#1079#1072#1082#1110#1085#1095#1077#1085#1085#1103' '#1076#1086#1075#1086#1074#1086#1088#1091
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -17
@@ -87,7 +99,7 @@ object FormCreatePolicy: TFormCreatePolicy
   end
   object DTPStartDate: TDateTimePicker
     Left = 384
-    Top = 155
+    Top = 147
     Width = 145
     Height = 23
     Date = 45832.000000000000000000
@@ -96,27 +108,19 @@ object FormCreatePolicy: TFormCreatePolicy
   end
   object EditTermYears: TEdit
     Left = 384
-    Top = 222
-    Width = 33
+    Top = 206
+    Width = 145
     Height = 23
     TabOrder = 1
   end
-  object DTPEndDate: TDateTimePicker
-    Left = 439
-    Top = 222
-    Width = 90
-    Height = 23
-    Date = 45832.000000000000000000
-    Time = 0.740372893516905600
-    TabOrder = 2
-  end
   object EditBaseRate: TEdit
     Left = 384
-    Top = 286
+    Top = 256
     Width = 145
     Height = 23
     Enabled = False
-    TabOrder = 3
+    ReadOnly = True
+    TabOrder = 2
   end
   object ButtonCreate: TButton
     Left = 208
@@ -130,10 +134,10 @@ object FormCreatePolicy: TFormCreatePolicy
     Font.Name = 'Segoe UI Semibold'
     Font.Style = [fsBold]
     ParentFont = False
-    TabOrder = 4
+    TabOrder = 3
     OnClick = ButtonCreateClick
   end
-  object Button2: TButton
+  object ButtonCancel: TButton
     Left = 69
     Top = 45
     Width = 108
@@ -145,18 +149,28 @@ object FormCreatePolicy: TFormCreatePolicy
     Font.Name = '@Malgun Gothic'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
-    OnClick = Button2Click
+    TabOrder = 4
+    OnClick = ButtonCancelClick
   end
   object ComboBoxType: TComboBox
     Left = 384
     Top = 99
     Width = 145
     Height = 23
-    TabOrder = 6
+    TabOrder = 5
+    OnChange = ComboBoxTypeChange
     Items.Strings = (
       #1040#1074#1090#1086#1089#1090#1072#1093#1091#1074#1072#1085#1085#1103' '
       #1057#1090#1088#1072#1093#1091#1074#1072#1085#1085#1103' '#1078#1080#1090#1090#1103)
+  end
+  object EditEndDate: TEdit
+    Left = 384
+    Top = 304
+    Width = 145
+    Height = 23
+    Enabled = False
+    ReadOnly = True
+    TabOrder = 6
   end
   object ADOQueryCreatePolicy: TADOQuery
     Connection = ADOConnectionCreatePolicy
@@ -169,6 +183,7 @@ object FormCreatePolicy: TFormCreatePolicy
       'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ARTEM\OneD' +
       'rive\Desktop\repoz\practik\practik_data_baze_format2003.mdb;Pers' +
       'ist Security Info=False'
+    LoginPrompt = False
     Provider = 'Microsoft.Jet.OLEDB.4.0'
     Left = 568
     Top = 376

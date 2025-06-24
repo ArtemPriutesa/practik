@@ -7,41 +7,47 @@
 #include <Vcl.Controls.hpp>
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
-#include <Vcl.ComCtrls.hpp>
+#include <Vcl.DBCtrls.hpp>
 #include <Data.DB.hpp>
-#include <Data.Win.ADODB.hpp>
+#include <ADODB.hpp>
+#include <Vcl.Grids.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Mask.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
+#include <Vcl.ComCtrls.hpp>
+
 //---------------------------------------------------------------------------
 class TFormCreatePolicy : public TForm
 {
-__published:	// IDE-managed Components
+__published:
+	TADOConnection *ADOConnectionCreatePolicy;
+	TADOQuery *ADOQueryCreatePolicy;
+	TComboBox *ComboBoxType;
+	TDateTimePicker *DTPStartDate;
+	TEdit *EditTermYears;
 	TLabel *Label1;
 	TLabel *Label2;
 	TLabel *Label3;
 	TLabel *Label4;
-	TLabel *Label6;
-	TDateTimePicker *DTPStartDate;
-	TEdit *EditTermYears;
-	TDateTimePicker *DTPEndDate;
-	TLabel *Label5;
-	TEdit *EditBaseRate;
 	TButton *ButtonCreate;
-	TButton *Button2;
-	TADOQuery *ADOQueryCreatePolicy;
-	TADOConnection *ADOConnectionCreatePolicy;
-	TComboBox *ComboBoxType;
-	void __fastcall Label3Click(TObject *Sender);
+	TButton *ButtonCancel;
+	TEdit *EditBaseRate;
+	TLabel *Label7;
+	TEdit *EditEndDate;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
-	void __fastcall ButtonCreateClick(TObject *Sender);
-	void __fastcall Button2Click(TObject *Sender);
-    void __fastcall DTPStartDateChange(TObject *Sender);
+	void __fastcall DTPStartDateChange(TObject *Sender);
 	void __fastcall EditTermYearsChange(TObject *Sender);
 	void __fastcall ComboBoxTypeChange(TObject *Sender);
-	void __fastcall ComboBox1TypeChange(TObject *Sender);
+	void __fastcall ButtonCreateClick(TObject *Sender);
+	void __fastcall ButtonCancelClick(TObject *Sender);
+
 private:	// User declarations
 	int FUserID;
-    void __fastcall UpdateEndDate();
+	TDateTime FEndDate;
+	void __fastcall UpdateEndDateDisplay();
 	double __fastcall CalculateBaseRate();
+	void __fastcall UpdateBaseRate();
 public:		// User declarations
 	__fastcall TFormCreatePolicy(TComponent* Owner);
 	void SetUserID(int UserID);

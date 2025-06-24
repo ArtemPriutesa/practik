@@ -8,7 +8,7 @@
 #include <Data.DB.hpp>
 #include <Data.Win.ADODB.hpp>
 #include <Vcl.Grids.hpp>
-#include <Vcl.DBGrids.hpp> // Для TDBGrid
+#include <Vcl.DBGrids.hpp>
 
 //---------------------------------------------------------------------------
 class TFormMyPolicies : public TForm
@@ -17,14 +17,13 @@ __published:	// IDE-managed Components
     TADOConnection *ADOConnectionMyPolicies;
     TADOQuery *ADOQueryMyPolicies;
     TDBGrid *DBGridMyPolicies;
-	TDataSource *DataSourceMyPolicies; // Можливо, для заголовка "Мої договори"
+	TDataSource *DataSourceMyPolicies;
     void __fastcall FormCreate(TObject *Sender);
     void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 private:	// User declarations
-    int FUserID; // Для зберігання ID користувача, який буде переданий
+	int FUserID;
 public:		// User declarations
-    __fastcall TFormMyPolicies(TComponent* Owner);
-	// Метод для встановлення ID користувача
+	__fastcall TFormMyPolicies(TComponent* Owner);
     void SetUserID(int UserID);
 };
 //---------------------------------------------------------------------------

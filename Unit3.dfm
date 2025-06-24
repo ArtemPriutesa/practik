@@ -33,6 +33,7 @@
       Height = 41
       Caption = #1053#1086#1074#1080#1081' '#1076#1086#1075#1086#1074#1110#1088
       TabOrder = 1
+      OnClick = Button2Click
     end
     object Button3: TButton
       Left = 16

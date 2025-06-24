@@ -21,6 +21,7 @@ __published:	// IDE-managed Components
 	TButton *Button5;
 	TGroupBox *GroupBox1;
 	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormÎffice(TComponent* Owner);

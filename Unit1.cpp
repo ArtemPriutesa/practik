@@ -61,10 +61,10 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 
 		ADOQuery1->Parameters->ParamByName("Логін")->Value = login;
 
-		ADOQuery1->Open(); // Відкриваємо запит для отримання результату COUNT(*)
+		ADOQuery1->Open();
 
 		if (!ADOQuery1->Eof) {
-			// Якщо COUNT(*) > 0, логін вже існує
+
 			if (ADOQuery1->Fields->Fields[0]->AsInteger > 0) {
 				exists = true;
 			}
@@ -73,9 +73,9 @@ void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
 	catch (Exception &E)
     {
 		ShowMessage("Помилка перевірки логіна: " + E.Message);
-        exists = true; // Припускаємо існування, щоб уникнути помилок
+		exists = true;
 	}
-    // Закриваємо запит після використання
+
 	if (ADOQuery1->Active) {
 		ADOQuery1->Close();
 	}
@@ -133,7 +133,7 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 
         ShowMessage("Реєстрація успішна! Ласкаво просимо, " + login + "!");
 
-        ModalResult = mrOk; // Встановлюємо результат для форми авторизації
+        ModalResult = mrOk;
     }
     catch (Exception &E)
     {

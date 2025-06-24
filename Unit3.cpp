@@ -5,6 +5,8 @@
 
 #include "Unit3.h"
 #include "Unit4.h"
+#include "Unit5.h"
+#include "Unit2.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "Unit2"
@@ -19,17 +21,17 @@ __fastcall TFormОffice::TFormОffice(TComponent* Owner)
 
 void __fastcall TFormОffice::Button1Click(TObject *Sender)
 {
-if (FormAuthorization->AuthenticatedUserID != -1) // Перевіряємо, чи користувач авторизований
+if (FormAuthorization->AuthenticatedUserID != -1)
     {
         TFormMyPolicies *MyPoliciesForm = new TFormMyPolicies(this);
         try
         {
-			MyPoliciesForm->SetUserID(FormAuthorization->AuthenticatedUserID); // Передаємо ID користувача
-            MyPoliciesForm->ShowModal(); // Показуємо форму модально
+			MyPoliciesForm->SetUserID(FormAuthorization->AuthenticatedUserID);
+			MyPoliciesForm->ShowModal();
 		}
         __finally
         {
-            delete MyPoliciesForm; // Завжди видаляємо об'єкт форми після використання
+			delete MyPoliciesForm;
         }
 	}
     else
@@ -39,4 +41,37 @@ if (FormAuthorization->AuthenticatedUserID != -1) // Перевіряємо, чи користувач 
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TFormОffice::Button2Click(TObject *Sender)
+{
+
+	if (AuthenticatedUserID != -1)
+	{
+
+		TFormCreatePolicy *CreatePolicyForm = new TFormCreatePolicy(this);
+        try
+        {
+
+			CreatePolicyForm->SetUserID(AuthenticatedUserID);
+
+
+            if (CreatePolicyForm->ShowModal() == mrOk) {
+
+                ShowMessage("Новий договір успішно створено!");
+
+            }
+        }
+        __finally
+        {
+
+            delete CreatePolicyForm;
+        }
+    }
+    else
+    {
+        ShowMessage("Для створення нового договору необхідно авторизуватися.");
+
+	}
+}
+//---------------------------------------------------------------------------
 
