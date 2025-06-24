@@ -1,4 +1,4 @@
-object Form2: TForm2
+object FormAuthorization: TFormAuthorization
   Left = 0
   Top = 0
   Caption = #1040#1074#1090#1086#1088#1080#1079#1072#1094#1110#1103
@@ -60,17 +60,17 @@ object Form2: TForm2
     TabOrder = 0
   end
   object Edit2: TEdit
-    Left = 166
+    Left = 155
     Top = 192
-    Width = 115
+    Width = 126
     Height = 23
     PasswordChar = '*'
     TabOrder = 1
   end
   object Button1: TButton
-    Left = 166
+    Left = 155
     Top = 272
-    Width = 115
+    Width = 126
     Height = 25
     Caption = #1042#1074#1110#1081#1090#1080
     Font.Charset = DEFAULT_CHARSET
@@ -83,12 +83,13 @@ object Form2: TForm2
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 166
+    Left = 155
     Top = 232
-    Width = 115
+    Width = 126
     Height = 17
     Caption = #1047#1072#1088#1077#1075#1077#1089#1090#1088#1091#1074#1072#1090#1080#1089#1103
     TabOrder = 3
+    OnClick = Button2Click
   end
   object ADOQuery1: TADOQuery
     Connection = ADOConnection1

@@ -9,15 +9,25 @@
 #include <Vcl.Forms.hpp>
 #include <Data.DB.hpp>
 #include <Data.Win.ADODB.hpp>
+#include "Unit2.h"
 //---------------------------------------------------------------------------
-class TForm3 : public TForm
+class TFormÎffice : public TForm
 {
 __published:	// IDE-managed Components
+	TButton *Button1;
+	TButton *Button2;
+	TButton *Button3;
+	TButton *Button4;
+	TButton *Button5;
+	TGroupBox *GroupBox1;
+	void __fastcall Button1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	__fastcall TForm3(TComponent* Owner);
+	__fastcall TFormÎffice(TComponent* Owner);
+    int AuthenticatedUserID;
+	AnsiString AuthenticatedUsername;
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm3 *Form3;
+extern PACKAGE TFormÎffice *FormÎffice;
 //---------------------------------------------------------------------------
 #endif
