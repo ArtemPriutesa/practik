@@ -6,6 +6,8 @@
 #include "Unit2.h"
 #include "Unit1.h"
 #include "Unit3.h"
+#include "Unit4.h"
+#include "Unit5.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -69,17 +71,17 @@ void __fastcall TFormAuthorization::Button1Click(TObject *Sender)
 		ADOQuery1->Open();
 
 
-        if (!ADOQuery1->Eof) {
+		if (!ADOQuery1->Eof) {
 
 			AnsiString loggedInUsername = ADOQuery1->Fields->FieldByName("Логін")->AsString;
-            ShowMessage("Ласкаво просимо, " + loggedInUsername + "!");
+			ShowMessage("Ласкаво просимо, " + loggedInUsername + "!");
 			AuthenticatedUserID = ADOQuery1->Fields->FieldByName("КодКористувача")->AsInteger;
 			AuthenticatedUsername = loggedInUsername;
 			FormОffice->Show();
 			Hide();
 		} else {
-            ShowMessage("Невірний логін або пароль.");
-        }
+			ShowMessage("Невірний логін або пароль.");
+		}
 	}
 	catch (Exception &E)
 	{

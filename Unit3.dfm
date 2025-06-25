@@ -28,7 +28,7 @@
     end
     object Button2: TButton
       Left = 16
-      Top = 87
+      Top = 103
       Width = 129
       Height = 41
       Caption = #1053#1086#1074#1080#1081' '#1076#1086#1075#1086#1074#1110#1088
@@ -37,7 +37,7 @@
     end
     object Button3: TButton
       Left = 16
-      Top = 144
+      Top = 176
       Width = 129
       Height = 41
       Caption = #1055#1083#1072#1090#1077#1078#1110
@@ -45,19 +45,11 @@
     end
     object Button4: TButton
       Left = 16
-      Top = 200
+      Top = 248
       Width = 129
       Height = 41
       Caption = #1052#1086#1111' '#1089#1090#1088#1072#1093#1086#1074#1110' '#1074#1080#1087#1072#1076#1082#1080
       TabOrder = 3
-    end
-    object Button5: TButton
-      Left = 16
-      Top = 256
-      Width = 129
-      Height = 41
-      Caption = #1055#1088#1086#1092#1110#1083#1100
-      TabOrder = 4
     end
   end
 end

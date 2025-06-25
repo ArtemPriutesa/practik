@@ -98,7 +98,6 @@ object FormAuthorization: TFormAuthorization
     Top = 312
   end
   object ADOConnection1: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ARTEM\OneD' +
       'rive\Desktop\repoz\practik\practik_data_baze_format2003.mdb;Pers' +

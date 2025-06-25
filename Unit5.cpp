@@ -6,6 +6,9 @@
 #include "Unit5.h"
 #include <System.DateUtils.hpp>
 #include "Unit2.h"
+#include "Unit1.h"
+#include "Unit3.h"
+#include "Unit4.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -67,6 +70,7 @@ void __fastcall TFormCreatePolicy::UpdateEndDateDisplay()
 		FEndDate = IncYear(DTPStartDate->Date, years);
 
 		EditEndDate->Text = FormatDateTime("dd.mm.yyyy", FEndDate);
+	}
 	} catch (Exception &E) {
 		FEndDate = DTPStartDate->Date;
 		EditEndDate->Text = FormatDateTime("dd.mm.yyyy", FEndDate);

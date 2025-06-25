@@ -7,6 +7,7 @@
 #include "Unit4.h"
 #include "Unit5.h"
 #include "Unit2.h"
+#include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma link "Unit2"
@@ -19,8 +20,14 @@ __fastcall TFormÎffice::TFormÎffice(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+void TFormMyPolicies::SetUserID(int UserID)
+{
+	FUserID = UserID;
+}
+
 void __fastcall TFormÎffice::Button1Click(TObject *Sender)
 {
+	ShowMessage(FUserID);
 if (FormAuthorization->AuthenticatedUserID != -1)
     {
         TFormMyPolicies *MyPoliciesForm = new TFormMyPolicies(this);

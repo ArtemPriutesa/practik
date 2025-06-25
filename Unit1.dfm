@@ -141,7 +141,7 @@ object Form1: TForm1
     Top = 368
   end
   object ADOQuery1: TADOQuery
-    Connection = ADOConnection1
+    Connection = FormAuthorization.ADOConnection1
     Parameters = <>
     Left = 384
     Top = 368

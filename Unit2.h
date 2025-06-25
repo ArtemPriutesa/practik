@@ -29,7 +29,7 @@ __published:	// IDE-managed Components
 	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-	int AuthenticatedUserID; // <--- Важливо: зберігає ID користувача
+	int AuthenticatedUserID;
 	AnsiString AuthenticatedUsername;
 	__fastcall TFormAuthorization(TComponent* Owner);
 };

@@ -1,0 +1,112 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UnitOffice.h"
+#include "UnitReg.h"
+#include "UnitAutor.h"
+#include "UnitNewPol.h"
+#include "UnitMyPol.h"
+#include "UnitMyCase.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFormOffice *FormOffice;
+//---------------------------------------------------------------------------
+__fastcall TFormOffice::TFormOffice(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormOffice::ButtonNewPolClick(TObject *Sender)
+{
+	if (AuthenticatedUserID != -1)
+	{
+
+		TFormNewPol *CreatePolicyForm = new TFormNewPol(this);
+		try
+		{
+
+			CreatePolicyForm->SetUserID(AuthenticatedUserID);
+
+
+			if (CreatePolicyForm->ShowModal() == mrOk) {
+
+				ShowMessage("Новий договір успішно створено!");
+
+			}
+		}
+		__finally
+		{
+
+			delete CreatePolicyForm;
+		}
+	}
+	else
+	{
+		ShowMessage("Для створення нового договору необхідно авторизуватися.");
+
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormOffice::N3Click(TObject *Sender)
+{
+	Application->Terminate();
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormOffice::ButtonMyPolyClick(TObject *Sender)
+{
+	if (AuthenticatedUserID != -1)
+	{
+
+		TFormMyPol *myPoliForm = new TFormMyPol(this);
+		try
+		{
+
+			myPoliForm->SetUserID(AuthenticatedUserID);
+
+
+			if (myPoliForm->ShowModal() == mrOk) {
+
+
+			}
+		}
+		__finally
+		{
+
+			delete myPoliForm;
+		}
+	}
+	else
+	{
+		ShowMessage("Для перегляду договорів необхідно авторизуватися.");
+
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormOffice::Button5Click(TObject *Sender)
+{
+    if (FormAutor->AuthenticatedUserID != -1)
+	{
+		TFormMyCase *MyCasesForm = new TFormMyCase(this);
+		try
+		{
+            MyCasesForm->SetUserID(FormAutor->AuthenticatedUserID);
+
+
+            MyCasesForm->ShowModal();
+		}
+        __finally
+        {
+
+			delete MyCasesForm;
+        }
+    }
+    else
+	{
+        ShowMessage("Для перегляду страхових випадків необхідно авторизуватися.");
+    }
+}
+
+//---------------------------------------------------------------------------

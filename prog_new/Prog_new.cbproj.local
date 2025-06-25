@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.146,D:\Навчання\C++ builder\Unit2.cpp=D:\Навчання\C++ builder\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.146,D:\Навчання\C++ builder\Unit2.dfm=D:\Навчання\C++ builder\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.146,D:\Навчання\C++ builder\Unit2.h=D:\Навчання\C++ builder\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.694,D:\Навчання\C++ builder\Project4.cbproj=D:\Навчання\C++ builder\Prog_new.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.325,=D:\Навчання\C++ builder\Project4PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.349,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Нова папка\Unit6.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.605,D:\Навчання\C++ builder\Unit1.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.683,D:\Навчання\C++ builder\Prog_new.cbproj=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Prog_new.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.605,D:\Навчання\C++ builder\Unit1.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.746,=D:\Навчання\C++ builder\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.605,D:\Навчання\C++ builder\Unit1.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.688,D:\Навчання\C++ builder\Project4PCH1.h=D:\Навчання\C++ builder\Prog_newPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.725,=D:\Навчання\C++ builder\Unit8.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.524,D:\Навчання\C++ builder\Prog_newPCH1.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Prog_newPCH2.h</Transaction>
+    <Transaction>2025.06.25 16:50:44.160,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit2.cpp</Transaction>
+    <Transaction>2025.06.25 16:51:02.809,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitAutor.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.dfm</Transaction>
+    <Transaction>2025.06.25 16:51:02.809,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitAutor.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.h</Transaction>
+    <Transaction>2025.06.25 16:51:02.809,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitAutor.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 16:51:20.300,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitRegestr.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit2.h</Transaction>
+    <Transaction>2025.06.25 16:51:20.300,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitRegestr.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit2.cpp</Transaction>
+    <Transaction>2025.06.25 16:51:20.300,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitRegestr.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit2.dfm</Transaction>
+    <Transaction>2025.06.25 17:05:11.513,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 17:05:27.018,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitReg.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 17:05:27.018,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitReg.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.dfm</Transaction>
+    <Transaction>2025.06.25 17:05:27.018,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitReg.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.h</Transaction>
+    <Transaction>2025.06.25 17:40:48.390,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 18:15:12.076,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitOffice.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.h</Transaction>
+    <Transaction>2025.06.25 18:15:12.076,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitOffice.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.dfm</Transaction>
+    <Transaction>2025.06.25 18:15:12.076,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitOffice.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 18:17:14.128,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 18:18:38.161,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitNewPol.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.h</Transaction>
+    <Transaction>2025.06.25 18:18:38.161,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitNewPol.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 18:18:38.161,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitNewPol.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.dfm</Transaction>
+    <Transaction>2025.06.25 21:21:28.860,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 21:29:15.487,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1MyPolcpp.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 21:29:15.487,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1MyPolcpp.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.h</Transaction>
+    <Transaction>2025.06.25 21:29:15.487,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1MyPolcpp.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.dfm</Transaction>
+    <Transaction>2025.06.25 21:29:21.207,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPolcpp.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1MyPolcpp.h</Transaction>
+    <Transaction>2025.06.25 21:29:21.207,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPolcpp.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1MyPolcpp.dfm</Transaction>
+    <Transaction>2025.06.25 21:29:21.207,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPolcpp.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1MyPolcpp.cpp</Transaction>
+    <Transaction>2025.06.25 22:17:21.491,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPol.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPolcpp.cpp</Transaction>
+    <Transaction>2025.06.25 22:17:21.491,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPol.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPolcpp.dfm</Transaction>
+    <Transaction>2025.06.25 22:17:21.491,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPol.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyPolcpp.h</Transaction>
+    <Transaction>2025.06.25 22:57:22.295,=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 22:57:36.715,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyCase.cpp=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.cpp</Transaction>
+    <Transaction>2025.06.25 22:57:36.715,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyCase.dfm=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.dfm</Transaction>
+    <Transaction>2025.06.25 22:57:36.715,C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\UnitMyCase.h=C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\Unit1.h</Transaction>
+  </Transactions>
+</BorlandProject>
