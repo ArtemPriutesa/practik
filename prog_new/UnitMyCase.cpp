@@ -8,6 +8,7 @@
 #include "UnitAutor.h"
 #include <Data.DB.hpp>
 #include "Global.h"
+#include "UnitNewCase.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -98,29 +99,27 @@ void __fastcall TFormMyCase::FormShow(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-/*void __fastcall TFormMyCase::ButtonNewCaseClick(TObject *Sender)
+void __fastcall TFormMyCase::ButtonCloseClick(TObject *Sender)
 {
-	FormNewCase *NewCaseForm = new TFormNewCase(this); // Створюємо нову форму для подачі випадку
+		Close(); // Просто закриваємо форму
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormMyCase::ButtonNewCaseClick(TObject *Sender)
+{
+	TFormNewCase *NewCaseForm = new TFormNewCase(this); // Створюємо нову форму для подачі випадку
 	try
 	{
-        NewCaseForm->SetUserID(FUserID); // Передаємо UserID на форму нового випадку
-        // Якщо необхідно передати ADOConnection:
-        // NewCaseForm->ADOConnectionCase->ConnectionString = ADOConnectionMyCases->ConnectionString;
 
 		if (NewCaseForm->ShowModal() == mrOk)
 		{
 			ShowMessage("Страховий випадок успішно подано!");
-			LoadUserCases(); // Оновлюємо список випадків після успішної подачі
+			LoadUserCases();
 		}
 	}
 	__finally
 	{
 		delete NewCaseForm;
 	}
-} */
-//---------------------------------------------------------------------------
-void __fastcall TFormMyCase::ButtonCloseClick(TObject *Sender)
-{
-		Close(); // Просто закриваємо форму
 }
 //---------------------------------------------------------------------------
+

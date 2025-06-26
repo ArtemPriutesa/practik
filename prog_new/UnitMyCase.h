@@ -27,6 +27,7 @@ __published:	// IDE-managed Components
 	void __fastcall FormShow(TObject *Sender);
 	//void __fastcall ButtonNewCaseClick(TObject *Sender);
 	void __fastcall ButtonCloseClick(TObject *Sender);
+	void __fastcall ButtonNewCaseClick(TObject *Sender);
 private:	// User declarations
 	int FUserID; // Для зберігання ID авторизованого користувача
 	void __fastcall LoadUserCases(); // Завантажує страхові випадки поточного користувача

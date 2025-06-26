@@ -16,7 +16,7 @@ object FormMyCase: TFormMyCase
   TextHeight = 15
   object Label1: TLabel
     Left = 208
-    Top = 8
+    Top = 24
     Width = 199
     Height = 28
     Caption = #1052#1086#1111' '#1089#1090#1088#1072#1093#1086#1074#1110' '#1074#1080#1087#1072#1076#1082#1080
@@ -29,7 +29,7 @@ object FormMyCase: TFormMyCase
   end
   object DBGridCases: TDBGrid
     Left = 16
-    Top = 42
+    Top = 58
     Width = 585
     Height = 225
     DataSource = DataSourceMyCases
@@ -68,15 +68,15 @@ object FormMyCase: TFormMyCase
       item
         Expanded = False
         FieldName = #1057#1090#1072#1090#1091#1089#1042#1080#1087#1072#1076#1082#1091
-        Width = 125
+        Width = 129
         Visible = True
       end>
   end
   object ButtonNewCase: TButton
-    Left = 448
-    Top = 304
-    Width = 153
-    Height = 65
+    Left = 392
+    Top = 312
+    Width = 209
+    Height = 49
     Caption = #1055#1086#1076#1072#1090#1080' '#13#10#1089#1090#1088#1072#1093#1086#1074#1080#1081' '#1074#1080#1087#1072#1076#1086#1082
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -85,12 +85,13 @@ object FormMyCase: TFormMyCase
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    OnClick = ButtonNewCaseClick
   end
   object ButtonClose: TButton
     Left = 16
-    Top = 392
-    Width = 137
-    Height = 34
+    Top = 32
+    Width = 105
+    Height = 20
     Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1100
     TabOrder = 2
     OnClick = ButtonCloseClick

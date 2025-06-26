@@ -137,6 +137,12 @@
             <DependentOn>UnitMyCase.h</DependentOn>
             <BuildOrder>7</BuildOrder>
         </CppCompile>
+        <CppCompile Include="UnitMyPay.cpp">
+            <Form>FormMyPay</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>UnitMyPay.h</DependentOn>
+            <BuildOrder>12</BuildOrder>
+        </CppCompile>
         <CppCompile Include="UnitMyPol.cpp">
             <Form>FormMyPol</Form>
             <FormType>dfm</FormType>
@@ -174,13 +180,14 @@
             <BuildOrder>3</BuildOrder>
         </CppCompile>
         <FormResources Include="UnitNewPol.dfm"/>
-        <FormResources Include="UnitOffice.dfm"/>
-        <FormResources Include="UnitProf.dfm"/>
-        <FormResources Include="UnitReg.dfm"/>
-        <FormResources Include="UnitMyPol.dfm"/>
-        <FormResources Include="UnitAutor.dfm"/>
-        <FormResources Include="UnitMyCase.dfm"/>
         <FormResources Include="UnitNewCase.dfm"/>
+        <FormResources Include="UnitMyPol.dfm"/>
+        <FormResources Include="UnitReg.dfm"/>
+        <FormResources Include="UnitProf.dfm"/>
+        <FormResources Include="UnitOffice.dfm"/>
+        <FormResources Include="UnitMyCase.dfm"/>
+        <FormResources Include="UnitAutor.dfm"/>
+        <FormResources Include="UnitMyPay.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

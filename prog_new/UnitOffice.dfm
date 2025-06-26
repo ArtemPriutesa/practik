@@ -15,51 +15,61 @@ object FormOffice: TFormOffice
   object GroupBox1: TGroupBox
     Left = 32
     Top = 32
-    Width = 145
-    Height = 337
+    Width = 153
+    Height = 385
+    Color = clGrayText
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 0
     object ButtonProf: TButton
       Left = 16
       Top = 32
-      Width = 113
-      Height = 33
+      Width = 121
+      Height = 41
       Caption = #1055#1088#1086#1092#1110#1083#1100
+      Default = True
       TabOrder = 0
       OnClick = ButtonProfClick
     end
     object ButtonNewPol: TButton
       Left = 16
-      Top = 88
-      Width = 113
-      Height = 33
+      Top = 96
+      Width = 121
+      Height = 49
       Caption = #1044#1086#1076#1072#1090#1080' '#1076#1086#1075#1086#1074#1110#1088' '
+      Default = True
       TabOrder = 1
       OnClick = ButtonNewPolClick
     end
     object ButtonHist: TButton
       Left = 16
-      Top = 152
-      Width = 113
-      Height = 33
+      Top = 168
+      Width = 121
+      Height = 49
       Caption = #1030#1089#1090#1086#1088#1110#1103' '#1074#1080#1087#1083#1072#1090
+      Default = True
       TabOrder = 2
+      OnClick = ButtonHistClick
     end
     object ButtonMyPoly: TButton
       Left = 16
-      Top = 216
-      Width = 113
-      Height = 33
+      Top = 240
+      Width = 121
+      Height = 49
       Caption = #1052#1086#1111' '#1076#1086#1075#1086#1074#1086#1088#1080
+      Default = True
       TabOrder = 3
       OnClick = ButtonMyPolyClick
     end
     object Button5: TButton
       Left = 16
-      Top = 280
-      Width = 113
-      Height = 33
+      Top = 312
+      Width = 121
+      Height = 49
       Caption = #1052#1086#1111' '#1089#1090#1088#1072#1093#1086#1074#1110' '#13#10#1074#1080#1087#1072#1076#1082#1080
+      Default = True
       TabOrder = 4
+      WordWrap = True
       OnClick = Button5Click
     end
   end

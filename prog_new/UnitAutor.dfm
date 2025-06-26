@@ -53,7 +53,7 @@ object FormAutor: TFormAutor
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 236
+    Left = 224
     Top = 257
     Width = 90
     Height = 17

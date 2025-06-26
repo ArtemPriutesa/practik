@@ -11,6 +11,7 @@
 #include "UnitMyCase.h"
 #include "UnitProf.h"
 #include "Global.h"
+#include "UnitMyPay.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -89,26 +90,24 @@ void __fastcall TFormOffice::ButtonMyPolyClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormOffice::Button5Click(TObject *Sender)
 {
-    if (FormAutor->AuthenticatedUserID != -1)
+	if (UserID != -1)
 	{
 		TFormMyCase *MyCasesForm = new TFormMyCase(this);
 		try
 		{
-			//MyCasesForm->SetUserID(FormAutor->AuthenticatedUserID);
 
-
-            MyCasesForm->ShowModal();
+			MyCasesForm->ShowModal();
 		}
-        __finally
-        {
+		__finally
+		{
 
 			delete MyCasesForm;
-        }
-    }
-    else
+		}
+	}
+	else
 	{
-        ShowMessage("Для перегляду страхових випадків необхідно авторизуватися.");
-    }
+		ShowMessage("Для перегляду страхових випадків необхідно авторизуватися.");
+	}
 }
 
 //---------------------------------------------------------------------------
@@ -133,6 +132,29 @@ void __fastcall TFormOffice::ButtonProfClick(TObject *Sender)
     else
 	{
         ShowMessage("Для перегляду профілю необхідно авторизуватися.");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormOffice::ButtonHistClick(TObject *Sender)
+{
+     if (UserID != -1)
+	{
+		TFormMyPay *MyPayForm = new TFormMyPay(this);
+		try
+		{
+
+			MyPayForm->ShowModal();
+		}
+		__finally
+		{
+
+			delete MyPayForm;
+		}
+	}
+	else
+	{
+		ShowMessage("Для перегляду історії необхідно авторизуватися.");
 	}
 }
 //---------------------------------------------------------------------------
