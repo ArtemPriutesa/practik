@@ -27,6 +27,7 @@ __published:	// IDE-managed Components
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall ButtonMyPolyClick(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall ButtonProfClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormOffice(TComponent* Owner);

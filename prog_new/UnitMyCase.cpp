@@ -7,6 +7,7 @@
 //#include "UnitNewCase.h"
 #include "UnitAutor.h"
 #include <Data.DB.hpp>
+#include "Global.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -18,12 +19,9 @@ __fastcall TFormMyCase::TFormMyCase(TComponent* Owner)
 	FUserID = -1;
 }
 //---------------------------------------------------------------------------
-void __fastcall TFormMyCase::SetUserID(int UserID)
-{
-	FUserID = UserID;
-}
 void __fastcall TFormMyCase::SetDBGridColumnWidths()
 {
+	FUserID = UserID;
 	// Переконайтесь, що ADOQueryCases було відкрито хоча б раз, щоб стовпці були створені
 	if (!ADOQueryMyCases->Active) {
 		try {
@@ -36,9 +34,9 @@ void __fastcall TFormMyCase::SetDBGridColumnWidths()
 	}
 
 
-		for(int i=0;i<6;i++){
+	   /*	for(int i=0;i<6;i++){
 		DBGridCases->Columns->Items[i]->Width=90;
-		};
+		}; */
 }
 void __fastcall TFormMyCase::LoadUserCases()
 {

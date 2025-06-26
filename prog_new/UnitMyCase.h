@@ -33,7 +33,7 @@ private:	// User declarations
 	void __fastcall SetDBGridColumnWidths();
 public:		// User declarations
 	__fastcall TFormMyCase(TComponent* Owner);
-	void __fastcall SetUserID(int UserID);
+	//void __fastcall SetUserID(int UserID);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormMyCase *FormMyCase;

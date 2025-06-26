@@ -9,6 +9,8 @@
 #include "UnitNewPol.h"
 #include "UnitMyPol.h"
 #include "UnitMyCase.h"
+#include "UnitProf.h"
+#include "Global.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -28,7 +30,7 @@ void __fastcall TFormOffice::ButtonNewPolClick(TObject *Sender)
 		try
 		{
 
-			CreatePolicyForm->SetUserID(AuthenticatedUserID);
+			//CreatePolicyForm->SetUserID(AuthenticatedUserID);
 
 
 			if (CreatePolicyForm->ShowModal() == mrOk) {
@@ -64,7 +66,7 @@ void __fastcall TFormOffice::ButtonMyPolyClick(TObject *Sender)
 		try
 		{
 
-			myPoliForm->SetUserID(AuthenticatedUserID);
+			//myPoliForm->SetUserID(AuthenticatedUserID);
 
 
 			if (myPoliForm->ShowModal() == mrOk) {
@@ -92,7 +94,7 @@ void __fastcall TFormOffice::Button5Click(TObject *Sender)
 		TFormMyCase *MyCasesForm = new TFormMyCase(this);
 		try
 		{
-            MyCasesForm->SetUserID(FormAutor->AuthenticatedUserID);
+			//MyCasesForm->SetUserID(FormAutor->AuthenticatedUserID);
 
 
             MyCasesForm->ShowModal();
@@ -110,3 +112,28 @@ void __fastcall TFormOffice::Button5Click(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
+void __fastcall TFormOffice::ButtonProfClick(TObject *Sender)
+{
+	if (FormAutor->AuthenticatedUserID != -1)
+	{
+
+		TFormProf *ProfileForm = new TFormProf(this);
+        try
+        {
+
+			//ProfileForm->SetUserID(FormAutor->AuthenticatedUserID);
+
+            ProfileForm->ShowModal();
+        }
+		__finally
+		{
+			delete ProfileForm;
+		}
+    }
+    else
+	{
+        ShowMessage("Для перегляду профілю необхідно авторизуватися.");
+	}
+}
+//---------------------------------------------------------------------------
+

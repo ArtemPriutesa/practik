@@ -1,0 +1,128 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UnitMyCase.h"
+//#include "UnitNewCase.h"
+#include "UnitAutor.h"
+#include <Data.DB.hpp>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFormMyCase *FormMyCase;
+//---------------------------------------------------------------------------
+__fastcall TFormMyCase::TFormMyCase(TComponent* Owner)
+	: TForm(Owner)
+{
+	FUserID = -1;
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormMyCase::SetUserID(int UserID)
+{
+	FUserID = UserID;
+}
+void __fastcall TFormMyCase::SetDBGridColumnWidths()
+{
+	// Переконайтесь, що ADOQueryCases було відкрито хоча б раз, щоб стовпці були створені
+	if (!ADOQueryMyCases->Active) {
+		try {
+			ADOQueryMyCases->Open();
+			ADOQueryMyCases->Close();
+		} catch (Exception &E) {
+			ShowMessage("Помилка при попередньому відкритті запиту для налаштування стовпців DBGrid: " + E.Message);
+
+		}
+	}
+
+
+		for(int i=0;i<6;i++){
+		DBGridCases->Columns->Items[i]->Width=90;
+		};
+}
+void __fastcall TFormMyCase::LoadUserCases()
+{
+	try {
+		if (ADOQueryMyCases->Active) {
+			ADOQueryMyCases->Close();
+		}
+
+		ADOQueryMyCases->Parameters->ParamByName("UserID")->Value = FUserID;
+		ADOQueryMyCases->Open();
+
+	} catch (Exception &E) {
+		ShowMessage("Помилка завантаження страхових випадків: " + E.Message);
+	}
+}
+void __fastcall TFormMyCase::FormCreate(TObject *Sender)
+{
+    try
+	{
+		// Підключаємося до бази даних
+		// ВАЖЛИВО: Переконайтеся, що ConnectionString для ADOConnectionMyCases налаштований у дизайнері
+		ADOConnectionMyCases->Connected = true;
+	}
+	catch (Exception &E)
+	{
+		ShowMessage("Помилка підключення до БД для 'Мої страхові випадки': " + E.Message + "\nПеревірте шлях до бази даних та налаштування ADOConnectionMyCases.");
+		ModalResult = mrCancel; // Закрити форму, якщо підключення не вдалося
+		return;
+	}
+
+	// Зв'язуємо DataSource з Query
+	DataSourceMyCases->DataSet = ADOQueryMyCases;
+
+	// Зв'язуємо DBGrid з DataSource
+	DBGridCases->DataSource = DataSourceMyCases;
+
+	// Встановлюємо ширину стовпців
+	SetDBGridColumnWidths();
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormMyCase::FormClose(TObject *Sender, TCloseAction &Action)
+{
+	if (ADOQueryMyCases->Active) {
+		ADOQueryMyCases->Close();
+	}
+	if (ADOConnectionMyCases->Connected) {
+		ADOConnectionMyCases->Close();
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormMyCase::FormShow(TObject *Sender)
+{
+         // Завантажуємо страхові випадки, коли форма стає видимою
+	if (FUserID != -1) {
+		LoadUserCases();
+	} else {
+		ShowMessage("Користувач не авторизований. Неможливо завантажити страхові випадки.");
+		ModalResult = mrCancel; // Закрити форму, якщо користувач не авторизований
+	}
+}
+//---------------------------------------------------------------------------
+/*void __fastcall TFormMyCase::ButtonNewCaseClick(TObject *Sender)
+{
+	FormNewCase *NewCaseForm = new TFormNewCase(this); // Створюємо нову форму для подачі випадку
+	try
+	{
+        NewCaseForm->SetUserID(FUserID); // Передаємо UserID на форму нового випадку
+        // Якщо необхідно передати ADOConnection:
+        // NewCaseForm->ADOConnectionCase->ConnectionString = ADOConnectionMyCases->ConnectionString;
+
+		if (NewCaseForm->ShowModal() == mrOk)
+		{
+			ShowMessage("Страховий випадок успішно подано!");
+			LoadUserCases(); // Оновлюємо список випадків після успішної подачі
+		}
+	}
+	__finally
+	{
+		delete NewCaseForm;
+	}
+} */
+//---------------------------------------------------------------------------
+void __fastcall TFormMyCase::ButtonCloseClick(TObject *Sender)
+{
+		Close(); // Просто закриваємо форму
+}
+//---------------------------------------------------------------------------

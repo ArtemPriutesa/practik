@@ -1,0 +1,10 @@
+// Globals.h
+#ifndef GlobalsH
+#define GlobalsH
+
+#include <System.hpp> // для AnsiString
+
+extern int gUserID;
+extern AnsiString gUsername;
+
+#endif

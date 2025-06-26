@@ -33,12 +33,44 @@ object FormMyCase: TFormMyCase
     Width = 585
     Height = 225
     DataSource = DataSourceMyCases
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = #1050#1086#1076#1042#1080#1087#1072#1076#1082#1091
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1050#1086#1076#1044#1086#1075#1086#1074#1086#1088#1091
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1044#1072#1090#1072#1042#1080#1087#1072#1076#1082#1091
+        Width = 86
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1054#1087#1080#1089
+        Width = 272
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = #1057#1090#1072#1090#1091#1089#1042#1080#1087#1072#1076#1082#1091
+        Width = 125
+        Visible = True
+      end>
   end
   object ButtonNewCase: TButton
     Left = 448

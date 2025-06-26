@@ -43,7 +43,7 @@ private:	// User declarations
 	void __fastcall UpdateEndDateAndRate();
 public:		// User declarations
 	__fastcall TFormNewPol(TComponent* Owner);
-	void __fastcall SetUserID(int UserID);
+   //	void __fastcall SetUserID(int UserID);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TFormNewPol *FormNewPol;

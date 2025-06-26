@@ -6,7 +6,7 @@
 #include "UnitAutor.h"
 #include "UnitReg.h"
 #include "UnitOffice.h"
-
+#include "Global.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -47,8 +47,8 @@ void __fastcall TFormAutor::Button1Click(TObject *Sender)
 
 			AnsiString loggedInUsername = ADOQuery1->Fields->FieldByName("Логін")->AsString;
 			ShowMessage("Ласкаво просимо, " + loggedInUsername + "!");
-			AuthenticatedUserID = ADOQuery1->Fields->FieldByName("КодКористувача")->AsInteger;
-			AuthenticatedUsername = loggedInUsername;
+			UserID = ADOQuery1->Fields->FieldByName("КодКористувача")->AsInteger;
+			Username = loggedInUsername;
 			FormOffice->Show();
 			Hide();
 		} else {

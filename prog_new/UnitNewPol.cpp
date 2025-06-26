@@ -7,6 +7,7 @@
 #include "UnitOffice.h"
 #include "UnitNewPol.h"
 #include <System.DateUtils.hpp>
+#include "Global.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -16,17 +17,18 @@ TFormNewPol *FormNewPol;
 __fastcall TFormNewPol::TFormNewPol(TComponent* Owner)
 	: TForm(Owner)
 {
-	FUserID = 0; // Ініціалізуємо UserID за замовчуванням
+	FUserID = -1; // Ініціалізуємо UserID за замовчуванням
 	FEndDate = Date();
 }
 //---------------------------------------------------------------------------
-void __fastcall TFormNewPol::SetUserID(int UserID)
+/*void __fastcall TFormNewPol::SetUserID(int UserID)
 {
-	FUserID = FormAutor->AuthenticatedUserID;
-}
+	//FUserID = FormAutor->AuthenticatedUserID;
+} */
 
 void __fastcall TFormNewPol::UpdateEndDateAndRate()
 {
+	FUserID = UserID;
     try {
         int years = SpinEditTerm->Value;
         if (years < 0) {
@@ -56,7 +58,7 @@ void __fastcall TFormNewPol::Button1Click(TObject *Sender)
 		return;
 	}
 
-	if (FUserID == 0) {
+	if (FUserID == -1) {
 		ShowMessage("Помилка: Код користувача не був визначений. Будь ласка, авторизуйтесь.");
 		ModalResult = mrCancel;
 		return;

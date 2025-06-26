@@ -112,6 +112,12 @@
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="Global.cpp">
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <None Include="Global.h">
+            <BuildOrder>10</BuildOrder>
+        </None>
         <CppCompile Include="Prog_new.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
@@ -137,6 +143,12 @@
             <DependentOn>UnitMyPol.h</DependentOn>
             <BuildOrder>6</BuildOrder>
         </CppCompile>
+        <CppCompile Include="UnitNewCase.cpp">
+            <Form>FormNewCase</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>UnitNewCase.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
         <CppCompile Include="UnitNewPol.cpp">
             <Form>FormNewPol</Form>
             <FormType>dfm</FormType>
@@ -149,18 +161,26 @@
             <DependentOn>UnitOffice.h</DependentOn>
             <BuildOrder>4</BuildOrder>
         </CppCompile>
+        <CppCompile Include="UnitProf.cpp">
+            <Form>FormProf</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>UnitProf.h</DependentOn>
+            <BuildOrder>8</BuildOrder>
+        </CppCompile>
         <CppCompile Include="UnitReg.cpp">
             <Form>FormReg</Form>
             <FormType>dfm</FormType>
             <DependentOn>UnitReg.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
-        <FormResources Include="UnitAutor.dfm"/>
-        <FormResources Include="UnitReg.dfm"/>
-        <FormResources Include="UnitOffice.dfm"/>
         <FormResources Include="UnitNewPol.dfm"/>
+        <FormResources Include="UnitOffice.dfm"/>
+        <FormResources Include="UnitProf.dfm"/>
+        <FormResources Include="UnitReg.dfm"/>
         <FormResources Include="UnitMyPol.dfm"/>
+        <FormResources Include="UnitAutor.dfm"/>
         <FormResources Include="UnitMyCase.dfm"/>
+        <FormResources Include="UnitNewCase.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

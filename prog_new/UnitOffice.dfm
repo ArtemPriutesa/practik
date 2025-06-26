@@ -25,6 +25,7 @@ object FormOffice: TFormOffice
       Height = 33
       Caption = #1055#1088#1086#1092#1110#1083#1100
       TabOrder = 0
+      OnClick = ButtonProfClick
     end
     object ButtonNewPol: TButton
       Left = 16
@@ -40,7 +41,7 @@ object FormOffice: TFormOffice
       Top = 152
       Width = 113
       Height = 33
-      Caption = #1030#1089#1090#1086#1088#1110#1103' '#1086#1087#1083#1072#1090#1080
+      Caption = #1030#1089#1090#1086#1088#1110#1103' '#1074#1080#1087#1083#1072#1090
       TabOrder = 2
     end
     object ButtonMyPoly: TButton
