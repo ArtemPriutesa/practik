@@ -14,7 +14,6 @@ class TFormOffice : public TForm
 __published:	// IDE-managed Components
 	TMainMenu *MainMenu1;
 	TMenuItem *N2;
-	TMenuItem *N1;
 	TMenuItem *N3;
 	TMenuItem *N4;
 	TGroupBox *GroupBox1;
@@ -23,12 +22,17 @@ __published:	// IDE-managed Components
 	TButton *ButtonHist;
 	TButton *ButtonMyPoly;
 	TButton *Button5;
+	TMenuItem *N1;
 	void __fastcall ButtonNewPolClick(TObject *Sender);
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall ButtonMyPolyClick(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall ButtonProfClick(TObject *Sender);
 	void __fastcall ButtonHistClick(TObject *Sender);
+	void __fastcall N2Click(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall ButtonNoMyCaseClick(TObject *Sender);
+	void __fastcall N1Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TFormOffice(TComponent* Owner);

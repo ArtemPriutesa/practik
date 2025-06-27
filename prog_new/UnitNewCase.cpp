@@ -22,7 +22,7 @@ void __fastcall TFormNewCase::FormCreate(TObject *Sender)
 {
 	FUserId=UserID;
 	DateTimePickerCase->Date = Date();
-
+    ApplyStyle();
 	ComboBoxPol->Items->Clear();
 	ADOQueryPol->Close();
 	ADOQueryPol->SQL->Clear();

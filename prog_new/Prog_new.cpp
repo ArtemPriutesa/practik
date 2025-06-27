@@ -4,15 +4,19 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
+#include <Vcl.Styles.hpp>
+#include <Vcl.Themes.hpp>
 USEFORM("UnitNewPol.cpp", FormNewPol);
 USEFORM("UnitNewCase.cpp", FormNewCase);
 USEFORM("UnitMyPol.cpp", FormMyPol);
+USEFORM("UnitOffice.cpp", FormOffice);
+USEFORM("UnitSett.cpp", FormSett);
 USEFORM("UnitReg.cpp", FormReg);
 USEFORM("UnitProf.cpp", FormProf);
-USEFORM("UnitOffice.cpp", FormOffice);
+USEFORM("UnitMyPay.cpp", FormMyPay);
 USEFORM("UnitMyCase.cpp", FormMyCase);
 USEFORM("UnitAutor.cpp", FormAutor);
-USEFORM("UnitMyPay.cpp", FormMyPay);
+USEFORM("UnitCaseAdmin.cpp", FormCasesAdmin);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -29,6 +33,8 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFormProf), &FormProf);
 		Application->CreateForm(__classid(TFormNewCase), &FormNewCase);
 		Application->CreateForm(__classid(TFormMyPay), &FormMyPay);
+		Application->CreateForm(__classid(TFormSett), &FormSett);
+		Application->CreateForm(__classid(TFormCasesAdmin), &FormCasesAdmin);
 		Application->Run();
 	}
 	catch (Exception &exception)

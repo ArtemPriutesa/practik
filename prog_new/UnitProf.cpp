@@ -61,6 +61,7 @@ void __fastcall TFormProf::LoadUserProfile()
 }
 void __fastcall TFormProf::FormCreate(TObject *Sender)
 {
+    ApplyStyle();
     try
 	{
 

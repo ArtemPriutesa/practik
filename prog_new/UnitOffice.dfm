@@ -11,10 +11,11 @@ object FormOffice: TFormOffice
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu1
+  OnCreate = FormCreate
   TextHeight = 15
   object GroupBox1: TGroupBox
-    Left = 32
-    Top = 32
+    Left = 39
+    Top = 40
     Width = 153
     Height = 385
     Color = clGrayText
@@ -33,9 +34,9 @@ object FormOffice: TFormOffice
     end
     object ButtonNewPol: TButton
       Left = 16
-      Top = 96
+      Top = 104
       Width = 121
-      Height = 49
+      Height = 41
       Caption = #1044#1086#1076#1072#1090#1080' '#1076#1086#1075#1086#1074#1110#1088' '
       Default = True
       TabOrder = 1
@@ -43,9 +44,9 @@ object FormOffice: TFormOffice
     end
     object ButtonHist: TButton
       Left = 16
-      Top = 168
+      Top = 176
       Width = 121
-      Height = 49
+      Height = 41
       Caption = #1030#1089#1090#1086#1088#1110#1103' '#1074#1080#1087#1083#1072#1090
       Default = True
       TabOrder = 2
@@ -53,9 +54,9 @@ object FormOffice: TFormOffice
     end
     object ButtonMyPoly: TButton
       Left = 16
-      Top = 240
+      Top = 248
       Width = 121
-      Height = 49
+      Height = 41
       Caption = #1052#1086#1111' '#1076#1086#1075#1086#1074#1086#1088#1080
       Default = True
       TabOrder = 3
@@ -63,9 +64,9 @@ object FormOffice: TFormOffice
     end
     object Button5: TButton
       Left = 16
-      Top = 312
+      Top = 320
       Width = 121
-      Height = 49
+      Height = 41
       Caption = #1052#1086#1111' '#1089#1090#1088#1072#1093#1086#1074#1110' '#13#10#1074#1080#1087#1072#1076#1082#1080
       Default = True
       TabOrder = 4
@@ -75,11 +76,13 @@ object FormOffice: TFormOffice
   end
   object MainMenu1: TMainMenu
     Left = 592
+    object N1: TMenuItem
+      Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1087#1086#1076#1072#1085#1110' '#1074#1080#1087#1072#1076#1082#1080
+      OnClick = N1Click
+    end
     object N2: TMenuItem
       Caption = #1053#1072#1083#1072#1096#1090#1091#1074#1072#1085#1085#1103
-    end
-    object N1: TMenuItem
-      Caption = #1044#1086#1074#1110#1076#1082#1072
+      OnClick = N2Click
     end
     object N4: TMenuItem
       Caption = #1047#1074#1110#1090

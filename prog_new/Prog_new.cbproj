@@ -63,6 +63,7 @@
         <SanitizedProjectName>Prog_new</SanitizedProjectName>
         <IncludePath>C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\;C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Нова папка\;$(IncludePath)</IncludePath>
         <ILINK_LibraryPath>C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\prog_new\;C:\Users\ARTEM\OneDrive\Desktop\repoz\practik\Нова папка\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <Custom_Styles>&quot;Tablet Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\TabletDark.vsf&quot;;Windows10|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10.vsf;Carbon|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Carbon.vsf;Silver|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Silver.vsf;&quot;Turquoise Gray|VCLSTYLE|$(BDSCOMMONDIR)\Styles\TurquoiseGray.vsf&quot;</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <PackageImports>adortl;appanalytics;bcbie;bcbsmp;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindcompvclsmp;bindcompvclwinx;bindengine;CloudService;CustomIPTransport;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXInterBaseDriver;DBXMySQLDriver;DBXSqliteDriver;dsnap;dsnapcon;dsnapxml;FireDAC;FireDACADSDriver;FireDACCommon;FireDACCommonDriver;FireDACCommonODBC;FireDACIBDriver;FireDACMSAccDriver;FireDACMySQLDriver;FireDACPgDriver;FireDACSqliteDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;RESTBackendComponents;RESTComponents;rtl;Skia;soapmidas;soaprtl;soapserver;tethering;vcl;vclactnband;vcldb;vcldsnap;vcledge;vclFireDAC;vclie;vclimg;VCLRESTComponents;VclSmp;vcltouch;vclwinx;vclx;xmlrtl;$(PackageImports)</PackageImports>
@@ -102,6 +103,8 @@
         <LinkPackageImports>rtl.bpi;vcl.bpi;dbrtl.bpi;adortl.bpi;VclSmp.bpi;vclx.bpi;vcldb.bpi;vclwinx.bpi;vclimg.bpi;bindengine.bpi</LinkPackageImports>
         <BCC_UseClassicCompiler>false</BCC_UseClassicCompiler>
         <ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)$(CC_SUFFIX)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <Defines>NDEBUG;$(Defines)</Defines>
@@ -130,6 +133,12 @@
             <FormType>dfm</FormType>
             <DependentOn>UnitAutor.h</DependentOn>
             <BuildOrder>2</BuildOrder>
+        </CppCompile>
+        <CppCompile Include="UnitCaseAdmin.cpp">
+            <Form>FormCasesAdmin</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>UnitCaseAdmin.h</DependentOn>
+            <BuildOrder>14</BuildOrder>
         </CppCompile>
         <CppCompile Include="UnitMyCase.cpp">
             <Form>FormMyCase</Form>
@@ -179,15 +188,23 @@
             <DependentOn>UnitReg.h</DependentOn>
             <BuildOrder>3</BuildOrder>
         </CppCompile>
+        <CppCompile Include="UnitSett.cpp">
+            <Form>FormSett</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>UnitSett.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
         <FormResources Include="UnitNewPol.dfm"/>
         <FormResources Include="UnitNewCase.dfm"/>
         <FormResources Include="UnitMyPol.dfm"/>
+        <FormResources Include="UnitOffice.dfm"/>
+        <FormResources Include="UnitSett.dfm"/>
         <FormResources Include="UnitReg.dfm"/>
         <FormResources Include="UnitProf.dfm"/>
-        <FormResources Include="UnitOffice.dfm"/>
+        <FormResources Include="UnitMyPay.dfm"/>
         <FormResources Include="UnitMyCase.dfm"/>
         <FormResources Include="UnitAutor.dfm"/>
-        <FormResources Include="UnitMyPay.dfm"/>
+        <FormResources Include="UnitCaseAdmin.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -214,6 +231,10 @@
                 <Source>
                     <Source Name="MainSource">Prog_new.cpp</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k290.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp290.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+                </Excluded_Packages>
             </CPlusPlusBuilder.Personality>
             <Deployment Version="4">
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgcrtl.dylib" Class="DependencyModule">

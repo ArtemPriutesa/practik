@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitSettH
+#define UnitSettH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+//---------------------------------------------------------------------------
+class TFormSett : public TForm
+{
+__published:	// IDE-managed Components
+	TLabel *Label1;
+	TGroupBox *GroupBoxTheme;
+	TRadioButton *RadioLight;
+	TRadioButton *RadioDark;
+	TRadioButton *RadioNight;
+	TButton *ButtonApply;
+	TButton *ButtonCancel;
+	void __fastcall ButtonApplyClick(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall ButtonCancelClick(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TFormSett(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFormSett *FormSett;
+//---------------------------------------------------------------------------
+#endif

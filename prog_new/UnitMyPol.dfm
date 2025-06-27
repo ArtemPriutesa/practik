@@ -3,7 +3,7 @@ object FormMyPol: TFormMyPol
   Top = 0
   Caption = #1052#1086#1111' '#1076#1086#1075#1086#1074#1086#1088#1080
   ClientHeight = 432
-  ClientWidth = 729
+  ClientWidth = 711
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,7 +13,7 @@ object FormMyPol: TFormMyPol
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
-    Left = 524
+    Left = 24
     Top = 24
     Width = 173
     Height = 37
@@ -27,8 +27,8 @@ object FormMyPol: TFormMyPol
   end
   object DBGrid1: TDBGrid
     Left = 24
-    Top = 88
-    Width = 673
+    Top = 67
+    Width = 665
     Height = 265
     DataSource = DataSource1
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -83,9 +83,9 @@ object FormMyPol: TFormMyPol
   end
   object Button1: TButton
     Left = 24
-    Top = 34
+    Top = 359
     Width = 81
-    Height = 33
+    Height = 26
     Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1103
     TabOrder = 1
     OnClick = Button1Click

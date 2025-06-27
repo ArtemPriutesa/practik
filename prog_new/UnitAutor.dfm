@@ -53,11 +53,11 @@ object FormAutor: TFormAutor
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 224
+    Left = 236
     Top = 257
-    Width = 90
+    Width = 92
     Height = 17
-    Caption = #1053#1077#1084#1072#1108' '#1072#1082#1072#1091#1085#1090#1091' '
+    Caption = #1053#1077#1084#1072#1108' '#1072#1082#1072#1091#1085#1090#1091'?'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -96,9 +96,9 @@ object FormAutor: TFormAutor
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 348
+    Left = 334
     Top = 259
-    Width = 53
+    Width = 69
     Height = 18
     Caption = #1057#1090#1074#1086#1088#1080#1090#1080
     TabOrder = 3

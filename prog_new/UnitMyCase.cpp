@@ -34,10 +34,6 @@ void __fastcall TFormMyCase::SetDBGridColumnWidths()
 		}
 	}
 
-
-	   /*	for(int i=0;i<6;i++){
-		DBGridCases->Columns->Items[i]->Width=90;
-		}; */
 }
 void __fastcall TFormMyCase::LoadUserCases()
 {
@@ -80,6 +76,7 @@ void __fastcall TFormMyCase::FormCreate(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormMyCase::FormClose(TObject *Sender, TCloseAction &Action)
 {
+    ApplyStyle();
 	if (ADOQueryMyCases->Active) {
 		ADOQueryMyCases->Close();
 	}

@@ -6,6 +6,7 @@
 #include "UnitReg.h"
 #include "UnitAutor.h"
 #include "UnitOffice.h"
+#include "Global.h"
 
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -128,6 +129,7 @@ void __fastcall TFormReg::Button2Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormReg::FormCreate(TObject *Sender)
 {
+	ApplyStyle();
     try
 	{
 		ADOConnection1->Connected = true;

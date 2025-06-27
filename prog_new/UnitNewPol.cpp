@@ -21,10 +21,6 @@ __fastcall TFormNewPol::TFormNewPol(TComponent* Owner)
 	FEndDate = Date();
 }
 //---------------------------------------------------------------------------
-/*void __fastcall TFormNewPol::SetUserID(int UserID)
-{
-	//FUserID = FormAutor->AuthenticatedUserID;
-} */
 
 void __fastcall TFormNewPol::UpdateEndDateAndRate()
 {
@@ -45,6 +41,7 @@ void __fastcall TFormNewPol::UpdateEndDateAndRate()
 }
 void __fastcall TFormNewPol::Button1Click(TObject *Sender)
 {
+
 	AnsiString type = ComboBoxType->Text.Trim();
 	TDateTime startDate = DateTimePickerStart->Date;
 	TDateTime endDate = FEndDate; // Використовуємо розраховану дату з приватного поля
@@ -75,32 +72,52 @@ void __fastcall TFormNewPol::Button1Click(TObject *Sender)
 	}
 
 	try
-	{
-		if (ADOQuery1->Active) {
-			ADOQuery1->Close();
-		}
-
-		ADOQuery1->SQL->Clear();
-		// Важливо: переконайтесь, що назва таблиці 'Policy' взята в квадратні дужки,
-		// якщо вона є зарезервованим словом у MS Access.
-		ADOQuery1->SQL->Add("INSERT INTO [Policy] (КодКористувача, Тип, ДатаПочатку, ДатаКінця, БазоваСтавка, СтатусДоговору) VALUES (:UserID, :Type, :StartDate, :EndDate, :BaseRate, :Status)");
-
-		ADOQuery1->Parameters->ParamByName("UserID")->Value = FUserID;
-		ADOQuery1->Parameters->ParamByName("Type")->Value = type;
-		ADOQuery1->Parameters->ParamByName("StartDate")->Value = startDate;
-		ADOQuery1->Parameters->ParamByName("EndDate")->Value = endDate;
-		ADOQuery1->Parameters->ParamByName("BaseRate")->Value = baseRate;
-		ADOQuery1->Parameters->ParamByName("Status")->Value = status;
-
-		ADOQuery1->ExecSQL();
-
-		ShowMessage("Договір успішно створено!");
-		ModalResult = mrOk; // Встановлюємо ModalResult, щоб батьківська форма знала про успіх
+{
+	if (ADOQuery1->Active) {
+		ADOQuery1->Close();
 	}
-	catch (Exception &E)
-	{
-		ShowMessage("Помилка під час створення договору: " + E.Message);
+
+	// 1. Вставка договору
+	ADOQuery1->SQL->Clear();
+	ADOQuery1->SQL->Add("INSERT INTO [Policy] (КодКористувача, Тип, ДатаПочатку, ДатаКінця, БазоваСтавка, СтатусДоговору) "
+						"VALUES (:UserID, :Type, :StartDate, :EndDate, :BaseRate, :Status)");
+
+	ADOQuery1->Parameters->ParamByName("UserID")->Value = FUserID;
+	ADOQuery1->Parameters->ParamByName("Type")->Value = type;
+	ADOQuery1->Parameters->ParamByName("StartDate")->Value = startDate;
+	ADOQuery1->Parameters->ParamByName("EndDate")->Value = endDate;
+	ADOQuery1->Parameters->ParamByName("BaseRate")->Value = baseRate;
+	ADOQuery1->Parameters->ParamByName("Status")->Value = status;
+
+	ADOQuery1->ExecSQL();
+
+	// 2. Отримуємо останній КодДоговору
+	ADOQuery1->SQL->Clear();
+	ADOQuery1->SQL->Add("SELECT MAX(КодДоговору) AS LastID FROM [Policy]");
+	ADOQuery1->Open();
+
+	int newPolicyID = ADOQuery1->FieldByName("LastID")->AsInteger;
+
+	// 3. Додаємо перший платіж у Payment
+	ADOQueryPay->Close();
+	ADOQueryPay->SQL->Clear();
+	ADOQueryPay->SQL->Add("INSERT INTO [Payment] (КодДоговору, ДатаПлатежу, СумаПлатежу) "
+						"VALUES (:PolicyID, :PayDate, :Amount)");
+
+	ADOQueryPay->Parameters->ParamByName("PolicyID")->Value = newPolicyID;
+	ADOQueryPay->Parameters->ParamByName("PayDate")->Value = Date();
+	ADOQueryPay->Parameters->ParamByName("Amount")->Value = baseRate;
+
+	ADOQueryPay->ExecSQL();
+
+	ShowMessage("Договір і перший платіж успішно створено!");
+	ModalResult = mrOk;
 	}
+catch (Exception &E)
+{
+	ShowMessage("Помилка під час створення: " + E.Message);
+}
+
 	if (ADOQuery1->Active) {
 		ADOQuery1->Close();
 	}
@@ -129,6 +146,7 @@ void __fastcall TFormNewPol::ComboBoxTypeChange(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormNewPol::FormCreate(TObject *Sender)
 {
+	ApplyStyle();
     ComboBoxType->ItemIndex = 0; // За замовчуванням перший елемент
 	DateTimePickerStart->Date = Date(); // Поточна дата
 	SpinEditTerm->Value = 1; // Термін за замовчуванням 1 рік

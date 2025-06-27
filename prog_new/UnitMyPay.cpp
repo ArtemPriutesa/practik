@@ -17,17 +17,20 @@ __fastcall TFormMyPay::TFormMyPay(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TFormMyPay::FormCreate(TObject *Sender)
 {
+	ApplyStyle();
 	ADOQueryPay->Close();
 	ADOQueryPay->SQL->Clear();
 	ADOQueryPay->Parameters->Clear();
 
 	ADOQueryPay->SQL->Add(
 		"SELECT W.КодВиплати, W.КодВипадку, W.ДатаВиплати, W.СумаВиплати "
-		"FROM [Payout] AS W "
-		"JOIN [Policy] AS P ON W.КодДоговору = P.КодДоговору "
+		"FROM ([Payout] AS W "
+		"INNER JOIN [Case] AS C ON W.КодВипадку = C.КодВипадку) "
+		"INNER JOIN [Policy] AS P ON C.КодДоговору = P.КодДоговору "
 		"WHERE P.КодКористувача = :UserID "
 		"ORDER BY W.ДатаВиплати DESC"
-	);
+		);
+
 
 	ADOQueryPay->Parameters->ParamByName("UserID")->Value = UserID;
 
@@ -39,3 +42,9 @@ void __fastcall TFormMyPay::FormCreate(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+void __fastcall TFormMyPay::Button1Click(TObject *Sender)
+{
+	Close();
+}
+//---------------------------------------------------------------------------
+

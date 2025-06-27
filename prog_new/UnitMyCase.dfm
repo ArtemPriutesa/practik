@@ -15,8 +15,8 @@ object FormMyCase: TFormMyCase
   OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
-    Left = 208
-    Top = 24
+    Left = 32
+    Top = 16
     Width = 199
     Height = 28
     Caption = #1052#1086#1111' '#1089#1090#1088#1072#1093#1086#1074#1110' '#1074#1080#1087#1072#1076#1082#1080
@@ -28,9 +28,9 @@ object FormMyCase: TFormMyCase
     ParentFont = False
   end
   object DBGridCases: TDBGrid
-    Left = 16
-    Top = 58
-    Width = 585
+    Left = 32
+    Top = 66
+    Width = 561
     Height = 225
     DataSource = DataSourceMyCases
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -73,9 +73,9 @@ object FormMyCase: TFormMyCase
       end>
   end
   object ButtonNewCase: TButton
-    Left = 392
+    Left = 400
     Top = 312
-    Width = 209
+    Width = 193
     Height = 49
     Caption = #1055#1086#1076#1072#1090#1080' '#13#10#1089#1090#1088#1072#1093#1086#1074#1080#1081' '#1074#1080#1087#1072#1076#1086#1082
     Font.Charset = DEFAULT_CHARSET
@@ -88,9 +88,9 @@ object FormMyCase: TFormMyCase
     OnClick = ButtonNewCaseClick
   end
   object ButtonClose: TButton
-    Left = 16
-    Top = 32
-    Width = 105
+    Left = 32
+    Top = 376
+    Width = 73
     Height = 20
     Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1100
     TabOrder = 2

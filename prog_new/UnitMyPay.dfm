@@ -28,7 +28,7 @@ object FormMyPay: TFormMyPay
   object DBGridPay: TDBGrid
     Left = 40
     Top = 80
-    Width = 545
+    Width = 449
     Height = 217
     DataSource = DataSourcePay
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -39,6 +39,15 @@ object FormMyPay: TFormMyPay
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 40
+    Top = 328
+    Width = 81
+    Height = 25
+    Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1103
+    TabOrder = 1
+    OnClick = Button1Click
   end
   object ADOConnectionPay: TADOConnection
     Connected = True
@@ -54,18 +63,8 @@ object FormMyPay: TFormMyPay
   end
   object ADOQueryPay: TADOQuery
     Connection = ADOConnectionPay
-    Parameters = <
-      item
-        Name = 'UserID'
-        Size = -1
-        Value = Null
-      end>
-    SQL.Strings = (
-      'SELECT W.'#1050#1086#1076#1042#1080#1087#1083#1072#1090#1080', W.'#1050#1086#1076#1042#1080#1087#1072#1076#1082#1091', W.'#1044#1072#1090#1072#1042#1080#1087#1083#1072#1090#1080', W.'#1057#1091#1084#1072#1042#1080#1087#1083#1072#1090#1080' '
-      'FROM [Payout] AS W '
-      'JOIN [Policy] AS P ON W.'#1050#1086#1076#1044#1086#1075#1086#1074#1086#1088#1091' = P.'#1050#1086#1076#1044#1086#1075#1086#1074#1086#1088#1091
-      'WHERE P.'#1050#1086#1076#1050#1086#1088#1080#1089#1090#1091#1074#1072#1095#1072' = :UserID'
-      'ORDER BY W.'#1044#1072#1090#1072#1042#1080#1087#1083#1072#1090#1080' DESC')
+    CursorType = ctOpenForwardOnly
+    Parameters = <>
     Left = 528
     Top = 320
   end

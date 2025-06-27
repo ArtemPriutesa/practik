@@ -157,4 +157,10 @@ object FormNewPol: TFormNewPol
     Left = 576
     Top = 304
   end
+  object ADOQueryPay: TADOQuery
+    Connection = ADOConnection1
+    Parameters = <>
+    Left = 576
+    Top = 408
+  end
 end

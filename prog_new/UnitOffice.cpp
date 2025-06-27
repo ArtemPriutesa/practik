@@ -12,6 +12,9 @@
 #include "UnitProf.h"
 #include "Global.h"
 #include "UnitMyPay.h"
+#include "UnitSett.h"
+#include "UnitCaseAdmin.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -66,10 +69,6 @@ void __fastcall TFormOffice::ButtonMyPolyClick(TObject *Sender)
 		TFormMyPol *myPoliForm = new TFormMyPol(this);
 		try
 		{
-
-			//myPoliForm->SetUserID(AuthenticatedUserID);
-
-
 			if (myPoliForm->ShowModal() == mrOk) {
 
 
@@ -120,10 +119,8 @@ void __fastcall TFormOffice::ButtonProfClick(TObject *Sender)
         try
         {
 
-			//ProfileForm->SetUserID(FormAutor->AuthenticatedUserID);
-
             ProfileForm->ShowModal();
-        }
+		}
 		__finally
 		{
 			delete ProfileForm;
@@ -138,7 +135,7 @@ void __fastcall TFormOffice::ButtonProfClick(TObject *Sender)
 
 void __fastcall TFormOffice::ButtonHistClick(TObject *Sender)
 {
-     if (UserID != -1)
+	 if (UserID != -1)
 	{
 		TFormMyPay *MyPayForm = new TFormMyPay(this);
 		try
@@ -155,6 +152,86 @@ void __fastcall TFormOffice::ButtonHistClick(TObject *Sender)
 	else
 	{
 		ShowMessage("Для перегляду історії необхідно авторизуватися.");
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFormOffice::N2Click(TObject *Sender)
+{
+	 if (UserID != -1)
+	{
+		TFormSett *SetForm = new TFormSett(this);
+		try
+		{
+			SetForm->ShowModal();
+		}
+		__finally
+		{
+
+			delete SetForm;
+		}
+	}
+	else
+	{
+		ShowMessage("Для перегляду налаштувань необхідно авторизуватися.");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormOffice::FormCreate(TObject *Sender)
+{
+	if(UserID==1){
+	   N1->Visible=true;
+	}else{
+	   N1->Visible=false;
+	}
+
+	ApplyStyle();
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TFormOffice::ButtonNoMyCaseClick(TObject *Sender)
+{
+	if (UserID != -1)
+	{
+		TFormCasesAdmin *AdmForm = new TFormCasesAdmin(this);
+		try
+		{
+			AdmForm->ShowModal();
+		}
+		__finally
+		{
+
+			delete AdmForm;
+		}
+	}
+	else
+	{
+		ShowMessage("Для перегляду необхідно авторизуватися.");
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TFormOffice::N1Click(TObject *Sender)
+{
+    if (UserID != -1)
+	{
+		TFormCasesAdmin *AdmForm = new TFormCasesAdmin(this);
+		try
+		{
+			AdmForm->ShowModal();
+		}
+		__finally
+		{
+
+			delete AdmForm;
+		}
+	}
+	else
+	{
+		ShowMessage("Для перегляду необхідно авторизуватися.");
 	}
 }
 //---------------------------------------------------------------------------

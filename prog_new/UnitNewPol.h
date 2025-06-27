@@ -28,6 +28,7 @@ __published:	// IDE-managed Components
 	TButton *Button2;
 	TADOQuery *ADOQuery1;
 	TADOConnection *ADOConnection1;
+	TADOQuery *ADOQueryPay;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall DateTimePickerStartChange(TObject *Sender);

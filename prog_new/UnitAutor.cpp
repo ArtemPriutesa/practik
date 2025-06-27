@@ -69,6 +69,8 @@ void __fastcall TFormAutor::Button1Click(TObject *Sender)
 
 void __fastcall TFormAutor::FormCreate(TObject *Sender)
 {
+	LoadSettings();
+	ApplyStyle();
 	try
 	{
 		ADOConnection1->Connected = true;

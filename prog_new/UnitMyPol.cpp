@@ -23,6 +23,7 @@ __fastcall TFormMyPol::TFormMyPol(TComponent* Owner)
 
 void __fastcall TFormMyPol::FormCreate(TObject *Sender)
 {
+		ApplyStyle();
 		FUserID = UserID;
 		for (int i = 0; i < DBGrid1->Columns->Count; i++) {
 			DBGrid1->Columns->Items[i]->Width = 112;
