@@ -138,4 +138,8 @@ object FormMyCase: TFormMyCase
     Left = 472
     Top = 392
   end
+  object DataSource1: TDataSource
+    Left = 480
+    Top = 408
+  end
 end

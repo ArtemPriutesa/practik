@@ -1,0 +1,44 @@
+object FormProgres: TFormProgres
+  Left = 597
+  Top = 229
+  Caption = 'Save'
+  ClientHeight = 441
+  ClientWidth = 624
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poDesigned
+  OnCreate = FormCreate
+  OnShow = FormShow
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 239
+    Top = 136
+    Width = 148
+    Height = 73
+    Caption = 'Save'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -60
+    Font.Name = 'Verdana'
+    Font.Style = []
+    ParentFont = False
+  end
+  object ProgressBar1: TProgressBar
+    Left = 56
+    Top = 264
+    Width = 521
+    Height = 49
+    TabOrder = 0
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 50
+    OnTimer = Timer1Timer
+    Left = 568
+    Top = 376
+  end
+end

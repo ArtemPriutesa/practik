@@ -22,6 +22,7 @@ __published:	// IDE-managed Components
 	TButton *ButtonNewCase;
 	TButton *ButtonClose;
 	TLabel *Label1;
+	TDataSource *DataSource1;
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall FormShow(TObject *Sender);
