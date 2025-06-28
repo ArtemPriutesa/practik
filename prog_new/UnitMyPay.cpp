@@ -21,7 +21,6 @@ void __fastcall TFormMyPay::FormCreate(TObject *Sender)
 	ADOQueryPay->Close();
 	ADOQueryPay->SQL->Clear();
 	ADOQueryPay->Parameters->Clear();
-
 	ADOQueryPay->SQL->Add(
 		"SELECT W.КодВиплати, W.КодВипадку, W.ДатаВиплати, W.СумаВиплати "
 		"FROM ([Payout] AS W "
@@ -30,10 +29,7 @@ void __fastcall TFormMyPay::FormCreate(TObject *Sender)
 		"WHERE P.КодКористувача = :UserID "
 		"ORDER BY W.ДатаВиплати DESC"
 		);
-
-
 	ADOQueryPay->Parameters->ParamByName("UserID")->Value = UserID;
-
 	try {
 		ADOQueryPay->Open();
 	}

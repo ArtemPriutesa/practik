@@ -1,6 +1,6 @@
 object FormProf: TFormProf
-  Left = 0
-  Top = 0
+  Left = 613
+  Top = 229
   Caption = #1055#1088#1086#1092#1110#1083#1100
   ClientHeight = 441
   ClientWidth = 624
@@ -10,13 +10,14 @@ object FormProf: TFormProf
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
   object Label1: TLabel
     Left = 256
-    Top = 32
+    Top = 35
     Width = 138
     Height = 45
     Caption = #1055#1088#1086#1092#1110#1083#1100
@@ -28,8 +29,8 @@ object FormProf: TFormProf
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 128
-    Top = 136
+    Left = 174
+    Top = 127
     Width = 46
     Height = 37
     Caption = #1030#1084#39#1103
@@ -41,11 +42,11 @@ object FormProf: TFormProf
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 128
+    Left = 174
     Top = 200
-    Width = 78
+    Width = 59
     Height = 37
-    Caption = #1057#1090#1072#1090#1091#1089
+    Caption = #1056#1086#1083#1100
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -54,11 +55,11 @@ object FormProf: TFormProf
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 128
-    Top = 264
-    Width = 239
+    Left = 102
+    Top = 262
+    Width = 223
     Height = 37
-    Caption = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1076#1086#1075#1086#1074#1086#1088#1110#1074
+    Caption = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1076#1086#1075#1086#1074#1088#1110#1074
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -27
@@ -68,32 +69,47 @@ object FormProf: TFormProf
   end
   object Button1: TButton
     Left = 128
-    Top = 50
+    Top = 56
     Width = 81
-    Height = 29
+    Height = 23
     Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1103
     TabOrder = 0
     OnClick = Button1Click
   end
   object EditName: TEdit
-    Left = 344
-    Top = 151
-    Width = 177
-    Height = 23
+    Left = 312
+    Top = 136
+    Width = 217
+    Height = 31
+    Alignment = taCenter
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
   end
   object EditStatus: TEdit
-    Left = 384
-    Top = 215
-    Width = 137
-    Height = 23
+    Left = 336
+    Top = 200
+    Width = 177
+    Height = 31
+    Alignment = taCenter
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -17
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
   end
-  object EditPolicyCount: TEdit
-    Left = 384
-    Top = 279
-    Width = 137
-    Height = 23
+  object EditPolCount: TEdit
+    Left = 392
+    Top = 271
+    Width = 73
+    Height = 28
+    Alignment = taCenter
     TabOrder = 3
   end
   object ADOConnectionProf: TADOConnection

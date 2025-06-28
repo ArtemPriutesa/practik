@@ -23,17 +23,14 @@ __fastcall TFormMyCase::TFormMyCase(TComponent* Owner)
 void __fastcall TFormMyCase::SetDBGridColumnWidths()
 {
 	FUserID = UserID;
-	// Переконайтесь, що ADOQueryCases було відкрито хоча б раз, щоб стовпці були створені
 	if (!ADOQueryMyCases->Active) {
 		try {
 			ADOQueryMyCases->Open();
 			ADOQueryMyCases->Close();
 		} catch (Exception &E) {
 			ShowMessage("Помилка при попередньому відкритті запиту для налаштування стовпців DBGrid: " + E.Message);
-
 		}
 	}
-
 }
 void __fastcall TFormMyCase::LoadUserCases()
 {
@@ -41,7 +38,6 @@ void __fastcall TFormMyCase::LoadUserCases()
 		if (ADOQueryMyCases->Active) {
 			ADOQueryMyCases->Close();
 		}
-
 		ADOQueryMyCases->Parameters->ParamByName("UserID")->Value = FUserID;
 		ADOQueryMyCases->Open();
 
@@ -53,24 +49,18 @@ void __fastcall TFormMyCase::FormCreate(TObject *Sender)
 {
     try
 	{
-		// Підключаємося до бази даних
-		// ВАЖЛИВО: Переконайтеся, що ConnectionString для ADOConnectionMyCases налаштований у дизайнері
 		ADOConnectionMyCases->Connected = true;
 	}
 	catch (Exception &E)
 	{
 		ShowMessage("Помилка підключення до БД для 'Мої страхові випадки': " + E.Message + "\nПеревірте шлях до бази даних та налаштування ADOConnectionMyCases.");
-		ModalResult = mrCancel; // Закрити форму, якщо підключення не вдалося
+		ModalResult = mrCancel;
 		return;
 	}
 
-	// Зв'язуємо DataSource з Query
+
 	DataSourceMyCases->DataSet = ADOQueryMyCases;
-
-	// Зв'язуємо DBGrid з DataSource
 	DBGridCases->DataSource = DataSourceMyCases;
-
-	// Встановлюємо ширину стовпців
 	SetDBGridColumnWidths();
 }
 //---------------------------------------------------------------------------
@@ -87,26 +77,24 @@ void __fastcall TFormMyCase::FormClose(TObject *Sender, TCloseAction &Action)
 //---------------------------------------------------------------------------
 void __fastcall TFormMyCase::FormShow(TObject *Sender)
 {
-         // Завантажуємо страхові випадки, коли форма стає видимою
 	if (FUserID != -1) {
 		LoadUserCases();
 	} else {
 		ShowMessage("Користувач не авторизований. Неможливо завантажити страхові випадки.");
-		ModalResult = mrCancel; // Закрити форму, якщо користувач не авторизований
+		ModalResult = mrCancel;
 	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormMyCase::ButtonCloseClick(TObject *Sender)
 {
-		Close(); // Просто закриваємо форму
+		Close();
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormMyCase::ButtonNewCaseClick(TObject *Sender)
 {
-	TFormNewCase *NewCaseForm = new TFormNewCase(this); // Створюємо нову форму для подачі випадку
+	TFormNewCase *NewCaseForm = new TFormNewCase(this);
 	try
 	{
-
 		if (NewCaseForm->ShowModal() == mrOk)
 		{
 			ShowMessage("Страховий випадок успішно подано!");

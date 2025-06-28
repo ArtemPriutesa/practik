@@ -8,6 +8,10 @@
 #include <Vcl.StdCtrls.hpp>
 #include <Vcl.Forms.hpp>
 #include <Vcl.Menus.hpp>
+#include <System.ImageList.hpp>
+#include <Vcl.ImgList.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Imaging.pngimage.hpp>
 //---------------------------------------------------------------------------
 class TFormOffice : public TForm
 {
@@ -15,14 +19,14 @@ __published:	// IDE-managed Components
 	TMainMenu *MainMenu1;
 	TMenuItem *N2;
 	TMenuItem *N3;
-	TMenuItem *N4;
 	TGroupBox *GroupBox1;
 	TButton *ButtonProf;
 	TButton *ButtonNewPol;
 	TButton *ButtonHist;
 	TButton *ButtonMyPoly;
 	TButton *Button5;
-	TMenuItem *N1;
+	TLabel *Label1;
+	TImage *Image1;
 	void __fastcall ButtonNewPolClick(TObject *Sender);
 	void __fastcall N3Click(TObject *Sender);
 	void __fastcall ButtonMyPolyClick(TObject *Sender);

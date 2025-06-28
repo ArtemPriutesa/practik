@@ -25,9 +25,8 @@ void __fastcall TFormSett::ButtonApplyClick(TObject *Sender)
 		CurrentTheme = "Night";
 
 	SaveSettings();
-	ApplyStyle(); // одразу застосувати
+	ApplyStyle();
 
-	// Оновлюємо всі форми, якщо відкриті
 	for (int i = 0; i < Screen->FormCount; i++) {
 		Screen->Forms[i]->Refresh();
 	}

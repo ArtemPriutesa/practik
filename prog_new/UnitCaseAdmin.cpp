@@ -5,6 +5,7 @@
 
 #include "UnitCaseAdmin.h"
 #include "Global.h"
+#include <Data.DB.hpp>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -17,12 +18,8 @@ __fastcall TFormCasesAdmin::TFormCasesAdmin(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TFormCasesAdmin::FormCreate(TObject *Sender)
 {
-	ADOConnection1->Connected = true;
 	ADOQueryCases->Close();
-	ADOQueryCases->SQL->Clear();
-	ADOQueryCases->SQL->Add("SELECT * FROM [Case]");
 	ADOQueryCases->Open();
-
 	ComboBoxStatus->Items->Clear();
 	ComboBoxStatus->Items->Add("Очікує");
 	ComboBoxStatus->Items->Add("Схвалено");
@@ -35,7 +32,6 @@ void __fastcall TFormCasesAdmin::DBGrid1CellClick(TColumn *Column)
 		ShowMessage("Немає вибраного запису.");
 		return;
 	}
-
 	try {
 		AnsiString currentStatus = ADOQueryCases->FieldByName("СтатусВипадку")->AsString;
 		ComboBoxStatus->Text = currentStatus;
@@ -58,44 +54,21 @@ if (!ADOQueryCases->Active || ADOQueryCases->IsEmpty())
 		ShowMessage("Оберіть новий статус.");
 		return;
 	}
-
 	try {
-		// Збереження нового статусу
+
 		ADOQueryCases->Edit();
 		AnsiString newStatus = ComboBoxStatus->Text;
 		ADOQueryCases->FieldByName("СтатусВипадку")->AsString = newStatus;
 		ADOQueryCases->Post();
-		int contractID;
-		int caseID;
-		if (newStatus == "Схвалено") {
 
+		int caseID = ADOQueryCases->FieldByName("КодВипадку")->AsInteger;
+		int contractID = ADOQueryCases->FieldByName("КодДоговору")->AsInteger;
 
-
-
-			float payoutAmount = 4000;
-
-
-			// Вставка в Payout
-			ADOQueryPay->Close();
-			ADOQueryPay->SQL->Clear();
-			ADOQueryPay->SQL->Add(
-				"INSERT INTO Payout (КодВипадку,  ДатаВиплати, СумаВиплати) "
-				"VALUES (:CID, :Date, :Sum)"
-			);
-			ADOQueryPay->Parameters->ParamByName("CID")->Value = caseID;
-			ADOQueryPay->Parameters->ParamByName("Date")->Value = Now();
-			ADOQueryPay->Parameters->ParamByName("Sum")->Value = payoutAmount;
-			ADOQueryPay->ExecSQL();
-
-			ShowMessage("Статус оновлено, виплату проведено.");
+		ShowMessage("Статус оновлено.");
 		}
-		else {
-			ShowMessage("Статус оновлено.");
-		}
-	}
-	catch (Exception &E) {
+		catch (Exception &E) {
 		ShowMessage("Помилка оновлення: " + E.Message);
-	}
+		}
 }
 //---------------------------------------------------------------------------
 void __fastcall TFormCasesAdmin::Button1Click(TObject *Sender)

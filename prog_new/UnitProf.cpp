@@ -25,13 +25,10 @@ void __fastcall TFormProf::LoadUserProfile()
 		ShowMessage("Помилка: ID користувача не встановлено. Неможливо завантажити профіль.");
 		return;
 	}
-
 	try {
 		if (ADOQueryProf->Active) {
 			ADOQueryProf->Close();
 		}
-
-
         ADOQueryProf->SQL->Clear();
 		ADOQueryProf->Parameters->Clear();
 		ADOQueryProf->SQL->Add("SELECT U.ПІП, U.Роль, COUNT(P.КодДоговору) AS КількістьДоговорів ");
@@ -40,20 +37,18 @@ void __fastcall TFormProf::LoadUserProfile()
 		ADOQueryProf->SQL->Add("WHERE U.КодКористувача = :UserID ");
 		ADOQueryProf->SQL->Add("GROUP BY U.ПІП, U.Роль");
 
-
 		ADOQueryProf->Parameters->ParamByName("UserID")->Value = FUserID;
 		ADOQueryProf->Open();
 
 		if (!ADOQueryProf->Eof) {
-
 			EditName->Text = ADOQueryProf->Fields->FieldByName("ПІП")->AsString;
 			EditStatus->Text = ADOQueryProf->Fields->FieldByName("Роль")->AsString;
-			EditPolicyCount->Text = ADOQueryProf->Fields->FieldByName("КількістьДоговорів")->AsString;
+			EditPolCount->Text = ADOQueryProf->Fields->FieldByName("КількістьДоговорів")->AsString;
 		} else {
 			ShowMessage("Дані про користувача з ID " + IntToStr(FUserID) + " не знайдено.");
 			EditName->Text = "";
 			EditStatus->Text = "";
-			EditPolicyCount->Text = "0";
+			EditPolCount->Text = "0";
 		}
 	} catch (Exception &E) {
 		ShowMessage("Помилка завантаження профілю користувача: " + E.Message);
@@ -61,21 +56,18 @@ void __fastcall TFormProf::LoadUserProfile()
 }
 void __fastcall TFormProf::FormCreate(TObject *Sender)
 {
-    ApplyStyle();
+	ApplyStyle();
     try
 	{
-
 		ADOConnectionProf->Connected = true;
-
-        // Поля для відображення робимо тільки для читання
         EditName->ReadOnly = true;
         EditStatus->ReadOnly = true;
-        EditPolicyCount->ReadOnly = true;
+		EditPolCount->ReadOnly = true;
 	}
 	catch (Exception &E)
 	{
 		ShowMessage("Помилка підключення до БД для 'Профілю': " + E.Message + "\nПеревірте шлях до бази даних та налаштування ADOConnectionProf.");
-		ModalResult = mrCancel; // Закрити форму, якщо підключення не вдалося
+		ModalResult = mrCancel;
 		return;
 	}
 }
@@ -87,7 +79,6 @@ void __fastcall TFormProf::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TFormProf::FormClose(TObject *Sender, TCloseAction &Action)
 {
-	// Закриваємо ADOQuery та ADOConnection при закритті форми
 	if (ADOQueryProf->Active) {
 		ADOQueryProf->Close();
 	}

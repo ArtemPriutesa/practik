@@ -1,6 +1,6 @@
 object FormReg: TFormReg
-  Left = 0
-  Top = 0
+  Left = 613
+  Top = 262
   Caption = #1056#1077#1075#1077#1089#1090#1088#1072#1094#1110#1103
   ClientHeight = 441
   ClientWidth = 624
@@ -10,6 +10,7 @@ object FormReg: TFormReg
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
@@ -27,7 +28,7 @@ object FormReg: TFormReg
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 133
+    Left = 136
     Top = 136
     Width = 167
     Height = 28
@@ -82,28 +83,30 @@ object FormReg: TFormReg
     Left = 376
     Top = 144
     Width = 145
-    Height = 20
+    Height = 23
     TabOrder = 0
   end
   object EditLog: TEdit
     Left = 376
     Top = 192
     Width = 145
-    Height = 20
+    Height = 23
     TabOrder = 1
   end
   object EditPas: TEdit
     Left = 376
     Top = 240
     Width = 145
-    Height = 20
+    Height = 23
+    PasswordChar = '*'
     TabOrder = 2
   end
   object EditPas2: TEdit
     Left = 376
     Top = 288
     Width = 145
-    Height = 20
+    Height = 23
+    PasswordChar = '*'
     TabOrder = 3
   end
   object Button1: TButton
@@ -123,10 +126,10 @@ object FormReg: TFormReg
   end
   object Button2: TButton
     Left = 133
-    Top = 64
-    Width = 49
+    Top = 56
+    Width = 76
     Height = 25
-    Caption = #1042#1110#1076#1084#1110#1085#1072
+    Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1100
     TabOrder = 5
     OnClick = Button2Click
   end

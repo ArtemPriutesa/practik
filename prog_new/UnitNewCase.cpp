@@ -47,10 +47,8 @@ void __fastcall TFormNewCase::FormCreate(TObject *Sender)
 	catch (Exception &E) {
 		ShowMessage("Помилка при завантаженні: " + E.Message);
 	}
-
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TFormNewCase::Button1Click(TObject *Sender)
 {
 	if (EditDescription->Text.Trim().IsEmpty()) {
@@ -70,7 +68,6 @@ void __fastcall TFormNewCase::Button1Click(TObject *Sender)
 			"INSERT INTO [Case] (КодДоговору, ДатаВипадку, Опис, СтатусВипадку) "
 			"VALUES (:PolId, :Date, :Desc, 'Очікує розгляд')"
 		);
-
 		ADOQueryNewCase->Parameters->ParamByName("PolId")->Value = idPol;
 		ADOQueryNewCase->Parameters->ParamByName("Date")->Value = date;
 		ADOQueryNewCase->Parameters->ParamByName("Desc")->Value = desc;

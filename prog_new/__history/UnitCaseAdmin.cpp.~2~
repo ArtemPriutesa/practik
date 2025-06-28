@@ -1,0 +1,82 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "UnitCaseAdmin.h"
+#include "Global.h"
+#include <Data.DB.hpp>
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TFormCasesAdmin *FormCasesAdmin;
+//---------------------------------------------------------------------------
+__fastcall TFormCasesAdmin::TFormCasesAdmin(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCasesAdmin::FormCreate(TObject *Sender)
+{
+	//ADOConnection1->Connected = true;
+	ADOQueryCases->Close();
+	ADOQueryCases->Open();
+
+	ComboBoxStatus->Items->Clear();
+	ComboBoxStatus->Items->Add("Очікує");
+	ComboBoxStatus->Items->Add("Схвалено");
+	ComboBoxStatus->Items->Add("Відхилено");
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCasesAdmin::DBGrid1CellClick(TColumn *Column)
+{
+	if (!ADOQueryCases->Active || ADOQueryCases->IsEmpty()) {
+		ShowMessage("Немає вибраного запису.");
+		return;
+	}
+
+	try {
+		AnsiString currentStatus = ADOQueryCases->FieldByName("СтатусВипадку")->AsString;
+		ComboBoxStatus->Text = currentStatus;
+	}
+	catch (Exception &E) {
+		ShowMessage("Помилка при завантаженні статусу: " + E.Message);
+	}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCasesAdmin::ButtonApplyClick(TObject *Sender)
+{
+if (!ADOQueryCases->Active || ADOQueryCases->IsEmpty())
+	{
+		ShowMessage("Немає обраного запису.");
+		return;
+	}
+
+	if (ComboBoxStatus->Text.Trim().IsEmpty())
+	{
+		ShowMessage("Оберіть новий статус.");
+		return;
+	}
+
+		try {
+		// Збереження нового статусу
+		ADOQueryCases->Edit();
+		AnsiString newStatus = ComboBoxStatus->Text;
+		ADOQueryCases->FieldByName("СтатусВипадку")->AsString = newStatus;
+		ADOQueryCases->Post();
+
+		int caseID = ADOQueryCases->FieldByName("КодВипадку")->AsInteger;
+		int contractID = ADOQueryCases->FieldByName("КодДоговору")->AsInteger;
+
+		ShowMessage("Статус оновлено.");
+		}
+		catch (Exception &E) {
+		ShowMessage("Помилка оновлення: " + E.Message);
+		}
+}
+//---------------------------------------------------------------------------
+void __fastcall TFormCasesAdmin::Button1Click(TObject *Sender)
+{
+	Close();
+}
+//---------------------------------------------------------------------------

@@ -25,23 +25,16 @@ bool TFormReg::IsLoginExists(const AnsiString& login)
 		ShowMessage("Помилка: З'єднання з базою даних відсутнє.");
 		return true;
 	}
-
 	try
 	{
 		if (ADOQuery1->Active) {
 			ADOQuery1->Close();
 		}
-
 		ADOQuery1->SQL->Clear();
-
 		ADOQuery1->SQL->Add("SELECT COUNT(*) FROM [User] WHERE Логін = :Логін");
-
 		ADOQuery1->Parameters->ParamByName("Логін")->Value = login;
-
 		ADOQuery1->Open();
-
 		if (!ADOQuery1->Eof) {
-
 			if (ADOQuery1->Fields->Fields[0]->AsInteger > 0) {
 				exists = true;
 			}
@@ -52,7 +45,6 @@ bool TFormReg::IsLoginExists(const AnsiString& login)
 		ShowMessage("Помилка перевірки логіна: " + E.Message);
 		exists = true;
 	}
-
 	if (ADOQuery1->Active) {
 		ADOQuery1->Close();
 	}
@@ -65,13 +57,11 @@ void __fastcall TFormReg::Button1Click(TObject *Sender)
 	AnsiString login = EditLog->Text.Trim();
 	AnsiString password = EditPas->Text;
 	AnsiString confirmPassword = EditPas2->Text;
-    AnsiString role = "клієнт";
-
+	AnsiString role = "клієнт";
     if (pip.IsEmpty() || login.IsEmpty() || password.IsEmpty() || confirmPassword.IsEmpty()) {
 		ShowMessage("Будь ласка, заповніть всі обов'язкові поля .");
         return;
-    }
-
+	}
 	if (password != confirmPassword) {
 		ShowMessage("Паролі не співпадають.");
 		EditPas->Clear();
@@ -79,19 +69,16 @@ void __fastcall TFormReg::Button1Click(TObject *Sender)
 		EditPas->SetFocus();
 		return;
 	}
-
 	if (password.Length() < 4) {
 		ShowMessage("Пароль має бути не менше 4 символів.");
 		return;
-    }
-
+	}
     if (IsLoginExists(login)) {
 		ShowMessage("Користувач з таким логіном вже існує.");
 		EditLog->Clear();
 		EditLog->SetFocus();
 		return;
-    }
-
+	}
     try
     {
 		if (ADOQuery1->Active) {

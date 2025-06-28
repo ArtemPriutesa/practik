@@ -1,6 +1,6 @@
 object FormMyPay: TFormMyPay
-  Left = 0
-  Top = 0
+  Left = 597
+  Top = 229
   Caption = #1030#1089#1090#1086#1088#1110#1103' '#1074#1080#1087#1083#1072#1090
   ClientHeight = 387
   ClientWidth = 624
@@ -10,6 +10,7 @@ object FormMyPay: TFormMyPay
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
@@ -28,7 +29,7 @@ object FormMyPay: TFormMyPay
   object DBGridPay: TDBGrid
     Left = 40
     Top = 80
-    Width = 449
+    Width = 545
     Height = 217
     DataSource = DataSourcePay
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -42,7 +43,7 @@ object FormMyPay: TFormMyPay
   end
   object Button1: TButton
     Left = 40
-    Top = 328
+    Top = 320
     Width = 81
     Height = 25
     Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1103

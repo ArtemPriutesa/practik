@@ -1,6 +1,6 @@
 object FormMyPol: TFormMyPol
-  Left = 0
-  Top = 0
+  Left = 565
+  Top = 229
   Caption = #1052#1086#1111' '#1076#1086#1075#1086#1074#1086#1088#1080
   ClientHeight = 432
   ClientWidth = 711
@@ -10,6 +10,7 @@ object FormMyPol: TFormMyPol
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel

@@ -30,7 +30,6 @@ void __fastcall TFormMyPol::FormCreate(TObject *Sender)
 		}
 		try {
 		if (FUserID == -1) {
-			//ShowMessage("Помилка: Код користувача не передано.");
 			ModalResult = mrCancel;
 			return;
 		}

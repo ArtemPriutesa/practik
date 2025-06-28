@@ -20,7 +20,7 @@ __published:	// IDE-managed Components
 	TLabel *Label3;
 	TEdit *EditStatus;
 	TLabel *Label4;
-	TEdit *EditPolicyCount;
+	TEdit *EditPolCount;
 	TADOConnection *ADOConnectionProf;
 	TADOQuery *ADOQueryProf;
 	void __fastcall FormCreate(TObject *Sender);

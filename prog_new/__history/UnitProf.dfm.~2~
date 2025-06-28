@@ -1,0 +1,115 @@
+object FormProf: TFormProf
+  Left = 0
+  Top = 0
+  Caption = #1055#1088#1086#1092#1110#1083#1100
+  ClientHeight = 441
+  ClientWidth = 624
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 256
+    Top = 32
+    Width = 138
+    Height = 45
+    Caption = #1055#1088#1086#1092#1110#1083#1100
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -33
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 128
+    Top = 136
+    Width = 46
+    Height = 37
+    Caption = #1030#1084#39#1103
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 128
+    Top = 200
+    Width = 78
+    Height = 37
+    Caption = #1057#1090#1072#1090#1091#1089
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 128
+    Top = 264
+    Width = 239
+    Height = 37
+    Caption = #1050#1110#1083#1100#1082#1110#1089#1090#1100' '#1076#1086#1075#1086#1074#1086#1088#1110#1074
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 128
+    Top = 50
+    Width = 81
+    Height = 29
+    Caption = #1055#1086#1074#1077#1088#1085#1091#1090#1080#1089#1103
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object EditName: TEdit
+    Left = 344
+    Top = 151
+    Width = 177
+    Height = 23
+    TabOrder = 1
+  end
+  object EditStatus: TEdit
+    Left = 384
+    Top = 215
+    Width = 137
+    Height = 23
+    TabOrder = 2
+  end
+  object EditPolicyCount: TEdit
+    Left = 384
+    Top = 279
+    Width = 137
+    Height = 23
+    TabOrder = 3
+  end
+  object ADOConnectionProf: TADOConnection
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ARTEM\OneD' +
+      'rive\Desktop\repoz\practik\prog_new\practik_data_baze_format2003' +
+      '.mdb;Persist Security Info=False'
+    LoginPrompt = False
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 568
+    Top = 392
+  end
+  object ADOQueryProf: TADOQuery
+    Connection = ADOConnectionProf
+    Parameters = <>
+    Left = 520
+    Top = 392
+  end
+end

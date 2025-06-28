@@ -25,13 +25,10 @@ Coordinates=136,173,40,36
 [ButtonHist]
 Coordinates=10,146,74,58
 
-[N4]
-Coordinates=87,173,40,36
-
 [MainMenu1]
 Coordinates=0,137,81,36
 
 []
-Coordinates=416,1,40,36
+Coordinates=87,173,40,36
 Visible=True
 

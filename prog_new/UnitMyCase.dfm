@@ -1,6 +1,6 @@
 object FormMyCase: TFormMyCase
-  Left = 0
-  Top = 0
+  Left = 597
+  Top = 180
   Caption = #1052#1086#1111' '#1089#1090#1088#1072#1093#1086#1074#1110' '#1074#1080#1087#1072#1076#1082#1080
   ClientHeight = 441
   ClientWidth = 624
@@ -10,6 +10,7 @@ object FormMyCase: TFormMyCase
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow

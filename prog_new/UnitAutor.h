@@ -9,6 +9,7 @@
 #include <Vcl.Forms.hpp>
 #include <Data.DB.hpp>
 #include <Data.Win.ADODB.hpp>
+#include <Vcl.ExtCtrls.hpp>
 //---------------------------------------------------------------------------
 class TFormAutor : public TForm
 {
@@ -28,6 +29,8 @@ __published:	// IDE-managed Components
 	void __fastcall FormClose(TObject *Sender, TCloseAction &Action);
 	void __fastcall Button2Click(TObject *Sender);
 private:	// User declarations
+	AnsiString FGeneratedCaptchaText;
+	void __fastcall GenerateCaptcha();
 public:		// User declarations
 	int AuthenticatedUserID;
 	AnsiString AuthenticatedUsername;

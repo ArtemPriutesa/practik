@@ -1,6 +1,6 @@
 object FormNewCase: TFormNewCase
-  Left = 0
-  Top = 0
+  Left = 629
+  Top = 229
   Caption = #1055#1086#1076#1072#1090#1080' '#1089#1090#1088#1072#1093#1086#1074#1080#1081' '#1074#1080#1087#1072#1076#1086#1082
   ClientHeight = 442
   ClientWidth = 615
@@ -10,6 +10,7 @@ object FormNewCase: TFormNewCase
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
@@ -77,7 +78,7 @@ object FormNewCase: TFormNewCase
     Left = 375
     Top = 261
     Width = 185
-    Height = 49
+    Height = 23
     TabOrder = 1
   end
   object Button1: TButton

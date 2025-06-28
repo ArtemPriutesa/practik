@@ -1,6 +1,6 @@
 object FormNewPol: TFormNewPol
-  Left = 0
-  Top = 0
+  Left = 613
+  Top = 245
   Caption = #1053#1086#1074#1080#1081' '#1076#1086#1075#1086#1074#1110#1088
   ClientHeight = 441
   ClientWidth = 624

@@ -14,7 +14,6 @@
 #include "UnitMyPay.h"
 #include "UnitSett.h"
 #include "UnitCaseAdmin.h"
-
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -29,30 +28,20 @@ void __fastcall TFormOffice::ButtonNewPolClick(TObject *Sender)
 {
 	if (AuthenticatedUserID != -1)
 	{
-
 		TFormNewPol *CreatePolicyForm = new TFormNewPol(this);
 		try
 		{
-
-			//CreatePolicyForm->SetUserID(AuthenticatedUserID);
-
-
 			if (CreatePolicyForm->ShowModal() == mrOk) {
-
-				ShowMessage("Новий договір успішно створено!");
-
 			}
 		}
 		__finally
 		{
-
 			delete CreatePolicyForm;
 		}
 	}
 	else
 	{
 		ShowMessage("Для створення нового договору необхідно авторизуватися.");
-
 	}
 }
 //---------------------------------------------------------------------------
@@ -65,25 +54,20 @@ void __fastcall TFormOffice::ButtonMyPolyClick(TObject *Sender)
 {
 	if (AuthenticatedUserID != -1)
 	{
-
 		TFormMyPol *myPoliForm = new TFormMyPol(this);
 		try
 		{
 			if (myPoliForm->ShowModal() == mrOk) {
-
-
 			}
 		}
 		__finally
 		{
-
 			delete myPoliForm;
 		}
 	}
 	else
 	{
 		ShowMessage("Для перегляду договорів необхідно авторизуватися.");
-
 	}
 }
 //---------------------------------------------------------------------------
@@ -94,12 +78,10 @@ void __fastcall TFormOffice::Button5Click(TObject *Sender)
 		TFormMyCase *MyCasesForm = new TFormMyCase(this);
 		try
 		{
-
 			MyCasesForm->ShowModal();
 		}
 		__finally
 		{
-
 			delete MyCasesForm;
 		}
 	}
@@ -108,17 +90,14 @@ void __fastcall TFormOffice::Button5Click(TObject *Sender)
 		ShowMessage("Для перегляду страхових випадків необхідно авторизуватися.");
 	}
 }
-
 //---------------------------------------------------------------------------
 void __fastcall TFormOffice::ButtonProfClick(TObject *Sender)
 {
 	if (FormAutor->AuthenticatedUserID != -1)
 	{
-
 		TFormProf *ProfileForm = new TFormProf(this);
         try
-        {
-
+		{
             ProfileForm->ShowModal();
 		}
 		__finally
@@ -132,7 +111,6 @@ void __fastcall TFormOffice::ButtonProfClick(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TFormOffice::ButtonHistClick(TObject *Sender)
 {
 	 if (UserID != -1)
@@ -140,12 +118,10 @@ void __fastcall TFormOffice::ButtonHistClick(TObject *Sender)
 		TFormMyPay *MyPayForm = new TFormMyPay(this);
 		try
 		{
-
 			MyPayForm->ShowModal();
 		}
 		__finally
 		{
-
 			delete MyPayForm;
 		}
 	}
@@ -155,8 +131,6 @@ void __fastcall TFormOffice::ButtonHistClick(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-
-
 void __fastcall TFormOffice::N2Click(TObject *Sender)
 {
 	 if (UserID != -1)
@@ -168,7 +142,6 @@ void __fastcall TFormOffice::N2Click(TObject *Sender)
 		}
 		__finally
 		{
-
 			delete SetForm;
 		}
 	}
@@ -178,20 +151,11 @@ void __fastcall TFormOffice::N2Click(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TFormOffice::FormCreate(TObject *Sender)
 {
-	if(UserID==1){
-	   N1->Visible=true;
-	}else{
-	   N1->Visible=false;
-	}
-
 	ApplyStyle();
 }
 //---------------------------------------------------------------------------
-
-
 void __fastcall TFormOffice::ButtonNoMyCaseClick(TObject *Sender)
 {
 	if (UserID != -1)
@@ -203,7 +167,6 @@ void __fastcall TFormOffice::ButtonNoMyCaseClick(TObject *Sender)
 		}
 		__finally
 		{
-
 			delete AdmForm;
 		}
 	}
@@ -213,10 +176,9 @@ void __fastcall TFormOffice::ButtonNoMyCaseClick(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-
 void __fastcall TFormOffice::N1Click(TObject *Sender)
 {
-    if (UserID != -1)
+	if (UserID != -1)
 	{
 		TFormCasesAdmin *AdmForm = new TFormCasesAdmin(this);
 		try
@@ -225,7 +187,6 @@ void __fastcall TFormOffice::N1Click(TObject *Sender)
 		}
 		__finally
 		{
-
 			delete AdmForm;
 		}
 	}

@@ -1,6 +1,6 @@
 object FormAutor: TFormAutor
-  Left = 0
-  Top = 0
+  Left = 597
+  Top = 295
   Caption = #1040#1074#1090#1086#1088#1080#1079#1072#1094#1110#1103
   ClientHeight = 441
   ClientWidth = 624
@@ -10,6 +10,7 @@ object FormAutor: TFormAutor
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
@@ -53,7 +54,7 @@ object FormAutor: TFormAutor
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 236
+    Left = 228
     Top = 257
     Width = 92
     Height = 17
@@ -96,7 +97,7 @@ object FormAutor: TFormAutor
     OnClick = Button1Click
   end
   object Button2: TButton
-    Left = 334
+    Left = 348
     Top = 259
     Width = 69
     Height = 18

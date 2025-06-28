@@ -6,17 +6,20 @@
 //---------------------------------------------------------------------------
 #include <Vcl.Styles.hpp>
 #include <Vcl.Themes.hpp>
+USEFORM("UnitOfficeAdmin.cpp", FormOfficeAdmin);
+USEFORM("UnitOffice.cpp", FormOffice);
 USEFORM("UnitNewPol.cpp", FormNewPol);
 USEFORM("UnitNewCase.cpp", FormNewCase);
-USEFORM("UnitMyPol.cpp", FormMyPol);
-USEFORM("UnitOffice.cpp", FormOffice);
 USEFORM("UnitSett.cpp", FormSett);
+USEFORM("UnitReport.cpp", FormReport);
 USEFORM("UnitReg.cpp", FormReg);
 USEFORM("UnitProf.cpp", FormProf);
+USEFORM("UnitMyPol.cpp", FormMyPol);
 USEFORM("UnitMyPay.cpp", FormMyPay);
 USEFORM("UnitMyCase.cpp", FormMyCase);
-USEFORM("UnitAutor.cpp", FormAutor);
 USEFORM("UnitCaseAdmin.cpp", FormCasesAdmin);
+USEFORM("UnitAutor.cpp", FormAutor);
+USEFORM("UnitSave.cpp", FormProgres);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -24,6 +27,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
+		Application->CreateForm(__classid(TFormProgres), &FormProgres);
 		Application->CreateForm(__classid(TFormAutor), &FormAutor);
 		Application->CreateForm(__classid(TFormReg), &FormReg);
 		Application->CreateForm(__classid(TFormOffice), &FormOffice);
@@ -35,6 +39,8 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->CreateForm(__classid(TFormMyPay), &FormMyPay);
 		Application->CreateForm(__classid(TFormSett), &FormSett);
 		Application->CreateForm(__classid(TFormCasesAdmin), &FormCasesAdmin);
+		Application->CreateForm(__classid(TFormOfficeAdmin), &FormOfficeAdmin);
+		Application->CreateForm(__classid(TFormReport), &FormReport);
 		Application->Run();
 	}
 	catch (Exception &exception)

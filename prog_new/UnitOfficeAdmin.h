@@ -1,0 +1,36 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitOfficeAdminH
+#define UnitOfficeAdminH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.Menus.hpp>
+//---------------------------------------------------------------------------
+class TFormOfficeAdmin : public TForm
+{
+__published:	// IDE-managed Components
+	TGroupBox *GroupBox1;
+	TButton *Button1;
+	TButton *Button3;
+	TButton *Button2;
+	TButton *Button4;
+	TLabel *Label1;
+	TMainMenu *MainMenu1;
+	TMenuItem *N1;
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall N1Click(TObject *Sender);
+private:	// User declarations
+public:		// User declarations
+	__fastcall TFormOfficeAdmin(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFormOfficeAdmin *FormOfficeAdmin;
+//---------------------------------------------------------------------------
+#endif

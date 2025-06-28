@@ -1,6 +1,6 @@
 object FormSett: TFormSett
-  Left = 97
-  Top = 33
+  Left = 678
+  Top = 245
   Caption = #1053#1072#1083#1072#1096#1090#1091#1074#1072#1085#1085#1103
   ClientHeight = 387
   ClientWidth = 455
@@ -14,7 +14,7 @@ object FormSett: TFormSett
   OnCreate = FormCreate
   TextHeight = 15
   object Label1: TLabel
-    Left = 144
+    Left = 136
     Top = 40
     Width = 197
     Height = 37
@@ -27,8 +27,8 @@ object FormSett: TFormSett
     ParentFont = False
   end
   object GroupBoxTheme: TGroupBox
-    Left = 48
-    Top = 120
+    Left = 64
+    Top = 128
     Width = 145
     Height = 137
     Caption = #1058#1077#1084#1072
