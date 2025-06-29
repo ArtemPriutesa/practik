@@ -8,11 +8,6 @@
 #include "UnitOffice.h"
 #include "UnitOfficeAdmin.h"
 #include "Global.h"
-#include <Vcl.Graphics.hpp> // Для TBitmap
-#include <Vcl.Imaging.jpeg.hpp> // Може знадобитися, якщо працюєте з JPG
-#include <Vcl.Imaging.pngimage.hpp> // Може знадобитися, якщо працюєте з PNG
-#include <System.Math.hpp>  // Для випадкових чисел
-#include <System.SysUtils.hpp> // Для RandomString
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
